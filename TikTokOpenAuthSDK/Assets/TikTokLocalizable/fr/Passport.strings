@@ -1,0 +1,12 @@
+/*
+ * Copyright 2022 TikTok Pte. Ltd.
+ *
+ * This source code is licensed under the license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+"Cancel" = "Annuler";
+"Network connection unavailable" = "Connexion au réseau indisponible";
+"Authorization failed" = "Échec de l'identification";
+"User cancelled authorization"= "Identification annulée par l'utilisateur";
+"OK" = "OK";

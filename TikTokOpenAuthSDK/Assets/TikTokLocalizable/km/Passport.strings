@@ -1,0 +1,12 @@
+/*
+ * Copyright 2022 TikTok Pte. Ltd.
+ *
+ * This source code is licensed under the license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+"Cancel" = "បោះបង់";
+"Network connection unavailable" = "បណ្ដាញ​មិន​អាច​ប្រើ​បាន";
+"Authorization failed" = "ការផ្ដល់អនុញ្ញាតបានបរាជ័យ";
+"User cancelled authorization"= "អ្នកប្រើបានបោះបង់ការផ្ដល់អនុញ្ញាត";
+"OK" = "យល់ព្រម";

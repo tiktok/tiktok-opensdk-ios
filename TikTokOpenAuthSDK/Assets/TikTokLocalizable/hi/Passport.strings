@@ -1,0 +1,12 @@
+/*
+ * Copyright 2022 TikTok Pte. Ltd.
+ *
+ * This source code is licensed under the license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+"Cancel" = "रद्द करें";
+"Network connection unavailable" = "नेटवर्क कनेक्शन अनुपलब्ध";
+"Authorization failed" = "प्रमाणीकरण असफल रहा";
+"User cancelled authorization"= "उपयोगकर्ता ने प्रमाणीकरण रद्द कर दिया";
+"OK" = "ठीक";

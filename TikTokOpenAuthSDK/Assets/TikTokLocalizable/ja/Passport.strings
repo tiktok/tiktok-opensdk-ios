@@ -1,0 +1,12 @@
+/*
+ * Copyright 2022 TikTok Pte. Ltd.
+ *
+ * This source code is licensed under the license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+"Cancel" = "キャンセル";
+"Network connection unavailable" = "現在このネットワークに接続できません";
+"Authorization failed" = "認証に失敗しました";
+"User cancelled authorization"= "ユーザーがアクセス権を取り消しました";
+"OK" = "OK";

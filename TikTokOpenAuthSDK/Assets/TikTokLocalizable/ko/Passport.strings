@@ -1,0 +1,12 @@
+/*
+ * Copyright 2022 TikTok Pte. Ltd.
+ *
+ * This source code is licensed under the license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+"Cancel" = "취소";
+"Network connection unavailable" = "네트워크 연결을 사용할 수 없음";
+"Authorization failed" = "인증 실패";
+"User cancelled authorization"= "사용자가 인증을 취소했습니다";
+"OK" = "확인";

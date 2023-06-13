@@ -1,0 +1,12 @@
+/*
+ * Copyright 2022 TikTok Pte. Ltd.
+ *
+ * This source code is licensed under the license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+"Cancel" = "Annuleren";
+"Network connection unavailable" = "Netwerkverbinding niet beschikbaar";
+"Authorization failed" = "Autorisatie mislukt";
+"User cancelled authorization"= "De gebruiker heeft de autorisatie geannuleerd";
+"OK" = "Oké";

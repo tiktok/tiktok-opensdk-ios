@@ -1,0 +1,12 @@
+/*
+ * Copyright 2022 TikTok Pte. Ltd.
+ *
+ * This source code is licensed under the license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+"Cancel" = "Batal";
+"Network connection unavailable" = "Koneksi jaringan tidak tersedia";
+"Authorization failed" = "Otorisasi gagal";
+"User cancelled authorization"= "Pengguna membatalkan otorisasi";
+"OK" = "OKE";
