@@ -24,7 +24,7 @@ class TikTokURLHandlerTest: XCTestCase {
         }
         let url = URL(string: "https://www.test.com/test?state=&from_platform=tiktoksharesdk&request_id=test-request-id&error_code=-2&response_id=test-response-id&error_string=bytebase_cancel_share")!
         XCTAssertEqual(url.host, "www.test.com")
-        XCTAssertTrue(TikTokURLHandler.handleOpenURL(url))
+        XCTAssertFalse(TikTokURLHandler.handleOpenURL(url))
         wait(for: [callbackExpectation], timeout: 1)
     }
     
@@ -38,7 +38,7 @@ class TikTokURLHandlerTest: XCTestCase {
         }
         let url = URL(string: "https://www.incorrecttest.com/test?state=&from_platform=tiktoksharesdk&request_id=test-request-id&error_code=-2&response_id=test-response-id&error_string=bytebase_cancel_share")!
         XCTAssertEqual(url.host, "www.incorrecttest.com")
-        XCTAssertTrue(TikTokURLHandler.handleOpenURL(url))
+        XCTAssertFalse(TikTokURLHandler.handleOpenURL(url))
         let result = XCTWaiter.wait(for: [callbackExpectation], timeout: 1.0)
         XCTAssertEqual(result, .timedOut, "Expectation was fulfilled, but it shouldn't have been.")
     }
