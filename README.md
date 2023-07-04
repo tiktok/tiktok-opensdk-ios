@@ -14,14 +14,13 @@ Sign up for a developer account in our [Developer Portal](https://developers.tik
 
 ### Install the SDK
 
-1. Add the library to your XCode project as a Swift Package:
-```
-1. Click File -> Add Packages...
-2. Paste the repository URL: https://github.com/tiktok/tiktok-opensdk-ios
-3. Select Dependency Rule -> 'Up to Next Major Version' and input the major version you want (i.e. 2.0.0)
-4. Select Add to Project -> Your target
-5. Click Add and select the libraries you need (TikTokOpenAuthSDK, TikTokOpenSDKCore, TikTokOpenShareSDK)
-```
+Add the library to your XCode project as a Swift Package:
+
+1. Click `File -> Add Packages...`
+2. Paste the repository URL: `https://github.com/tiktok/tiktok-opensdk-ios`
+3. Select `Dependency Rule` -> `Up to Next Major Version` and input the major version you want (i.e. `2.0.0`)
+4. Select `Add to Project` -> Your project
+5. Click `Copy Dependency` and select the libraries you need (`TikTokOpenAuthSDK`, `TikTokOpenSDKCore`, `TikTokOpenShareSDK`)
 
 ### Configure Your XCode Project
 
