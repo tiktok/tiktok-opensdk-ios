@@ -2,7 +2,7 @@
 
 ## Introduction
 
-TikTok OpenSDK is a framework that enables your users to log into your app with their TikTok accounts and share images and videos to TikTok. This SDK is available for download through CocoaPods.
+TikTok OpenSDK is a framework that enables your users to log into your app with their TikTok accounts and share images and videos to TikTok. This SDK is available for download through Swift Package Manager.
 
 ## Getting Started
 
@@ -14,13 +14,14 @@ Sign up for a developer account in our [Developer Portal](https://developers.tik
 
 ### Install the SDK
 
-1. Add the following to your Podfile
-```ruby
-pod 'TikTokOpenSDKCore'
-pod 'TikTokOpenAuthSDK'
-pod 'TikTokOpenShareSDK'
+1. Add the library to your XCode project as a Swift Package:
 ```
-2. Run `pod install --repo-update`
+1. Click File -> Add Packages...
+2. Paste the repository URL: https://github.com/tiktok/tiktok-opensdk-ios
+3. Select Dependency Rule -> 'Up to Next Major Version' and input the major version you want (i.e. 2.0.0)
+4. Select Add to Project -> Your target
+5. Click Add and select the libraries you need (TikTokOpenAuthSDK, TikTokOpenSDKCore, TikTokOpenShareSDK)
+```
 
 ### Configure Your XCode Project
 
@@ -95,7 +96,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 ## Login Kit Usage
 
-Login Kit functionality depends on the `TikTokOpenSDKCore` and `TikTokOpenAuthSDK` pods, so be sure to add these to your podfile. The following code snippet shows how to create an authorization request and handle the response. See [Login Kit for iOS](https://developers.tiktok.com/doc/login-kit-ios-quickstart/) for more details.
+Login Kit functionality depends on the `TikTokOpenSDKCore` and `TikTokOpenAuthSDK` libraries, so be sure to select these when adding the package. The following code snippet shows how to create an authorization request and handle the response. See [Login Kit for iOS](https://developers.tiktok.com/doc/login-kit-ios-quickstart/) for more details.
 ```swift
 import TikTokOpenAuthSDK
 
@@ -115,7 +116,7 @@ Your app is responsible for maintaining a strong reference to the request in ord
 
 ## Share Kit Usage
 
-Share Kit functionality depends on the `TikTokOpenSDKCore` and `TikTokOpenShareSDK` pods, so be sure to add these to your podfile. The following code snippet shows how to create a share request and handle the response. See [Share Kit for iOS](https://developers.tiktok.com/doc/share-kit-ios-quickstart-v2/) for more details.
+Share Kit functionality depends on the `TikTokOpenSDKCore` and `TikTokOpenShareSDK` libraries, so be sure to select these when adding the package. The following code snippet shows how to create a share request and handle the response. See [Share Kit for iOS](https://developers.tiktok.com/doc/share-kit-ios-quickstart-v2/) for more details.
 ```swift
 import TikTokOpenShareSDK
 
