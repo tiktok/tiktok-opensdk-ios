@@ -91,7 +91,7 @@ class TikTokAuthService: NSObject, TikTokRequestResponseHandling {
         urlComps.queryItems = [
             URLQueryItem(name: "error_code", value: "-2"),
             URLQueryItem(name: "error", value: "access_denied"),
-            URLQueryItem(name: "error_string", value: NSLocalizedString("User cancelled authorization", comment: "")),
+            URLQueryItem(name: "error_string", value: NSLocalizedString("User cancelled authorization", bundle: .module, comment: "")),
         ]
         return urlComps.url
     }
