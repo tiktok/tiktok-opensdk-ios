@@ -64,7 +64,7 @@ let ScopeListContent: [ScopeListSection] = [
             title: "user.info.profile",
             subtitle: "Read access to profile_web_link, profile_deep_link, bio_description, is_verified.",
             type: .switch,
-            isRequired: true,
+            isRequired: false,
             setDefault: setDefaultScope,
             propagateChange: propagateScope,
             default: false
@@ -73,7 +73,7 @@ let ScopeListContent: [ScopeListSection] = [
             title: "user.info.stats",
             subtitle: "Read access to a user's statistical data, such as likes count, follower count, following count, and video count.",
             type: .switch,
-            isRequired: true,
+            isRequired: false,
             setDefault: setDefaultScope,
             propagateChange: propagateScope,
             default: false
