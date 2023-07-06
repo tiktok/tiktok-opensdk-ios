@@ -53,12 +53,30 @@ let ScopeListContent: [ScopeListSection] = [
     ScopeListSection(headerTitle: "Permissions", hideImg: true, items: [
         ScopeListItem(
             title: "user.info.basic",
-            subtitle: "Read your profile info (avatar, display name). This scope is required.",
+            subtitle: "Read a user's profile info (open id, avatar, display name). This scope is required.",
             type: .switch,
             isRequired: true,
             setDefault: setDefaultScope,
             propagateChange: propagateScope,
             default: true
+        ),
+        ScopeListItem(
+            title: "user.info.profile",
+            subtitle: "Read access to profile_web_link, profile_deep_link, bio_description, is_verified.",
+            type: .switch,
+            isRequired: false,
+            setDefault: setDefaultScope,
+            propagateChange: propagateScope,
+            default: false
+        ),
+        ScopeListItem(
+            title: "user.info.stats",
+            subtitle: "Read access to a user's statistical data, such as likes count, follower count, following count, and video count.",
+            type: .switch,
+            isRequired: false,
+            setDefault: setDefaultScope,
+            propagateChange: propagateScope,
+            default: false
         ),
         ScopeListItem(
             title: "video.upload",

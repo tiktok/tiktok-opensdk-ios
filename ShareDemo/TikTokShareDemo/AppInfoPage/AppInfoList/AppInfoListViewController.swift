@@ -43,7 +43,7 @@ class AppInfoListViewController: ListViewController<AppInfoListItem, AppInfoList
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
     }
 

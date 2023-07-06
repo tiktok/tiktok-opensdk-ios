@@ -22,15 +22,17 @@ class AppInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(false, animated: true)
+        view.backgroundColor = .white
         setUp()
     }
 
     func setUp() {
-        view.translatesAutoresizingMaskIntoConstraints = false
+        view.translatesAutoresizingMaskIntoConstraints = true
         let listVC = listViewController
+        listVC.view.translatesAutoresizingMaskIntoConstraints = false
         add(childViewController: listVC)
         let bottomBarVC = bottombarViewController
+        bottomBarVC.view.translatesAutoresizingMaskIntoConstraints = false
         add(childViewController: bottomBarVC)
 
         NSLayoutConstraint.activate([

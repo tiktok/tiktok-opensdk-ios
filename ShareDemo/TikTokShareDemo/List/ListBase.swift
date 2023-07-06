@@ -87,11 +87,13 @@ class ListBaseHeader<T: ListSection>: UITableViewHeaderFooterView, ListHeader {
 
     private func setUpLayout() {
         contentView.addSubview(imgView)
+        let imgHeight = imgView.heightAnchor.constraint(equalToConstant: 194)
+        imgHeight.priority = .defaultHigh
         NSLayoutConstraint.activate([
             imgView.topAnchor.constraint(equalTo: contentView.topAnchor),
             imgView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
             imgView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
-            imgView.heightAnchor.constraint(equalToConstant: 194)
+            imgHeight
         ])
         contentView.addSubview(label)
         NSLayoutConstraint.activate([

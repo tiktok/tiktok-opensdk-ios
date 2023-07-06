@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2BA39EB5289A2F80004F94F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA39EB4289A2F80004F94F4 /* AppDelegate.swift */; };
-		2BA39EB9289A2F80004F94F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA39EB8289A2F80004F94F4 /* ViewController.swift */; };
-		2BA39EBC289A2F80004F94F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BA39EBA289A2F80004F94F4 /* Main.storyboard */; };
 		2BA39EBE289A2F80004F94F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA39EBD289A2F80004F94F4 /* Assets.xcassets */; };
 		2BA39EC1289A2F80004F94F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BA39EBF289A2F80004F94F4 /* LaunchScreen.storyboard */; };
 		2BA39EFF289A358E004F94F4 /* ListBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA39EFE289A358E004F94F4 /* ListBase.swift */; };
@@ -31,7 +29,6 @@
 		2BA39F32289AF20D004F94F4 /* AppInfoListDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA39F31289AF20D004F94F4 /* AppInfoListDisplayCell.swift */; };
 		2BA39F3E289C36F0004F94F4 /* AppInfoListContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA39F3D289C36F0004F94F4 /* AppInfoListContent.swift */; };
 		2BA39F53289CEE2D004F94F4 /* SelectMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA39F52289CEE2D004F94F4 /* SelectMediaViewController.swift */; };
-		2BA39F55289DD242004F94F4 /* SelectMediaDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA39F54289DD242004F94F4 /* SelectMediaDelegate.swift */; };
 		2BA39F57289DDB15004F94F4 /* MetaInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA39F56289DDB15004F94F4 /* MetaInfoViewController.swift */; };
 		2BA39F5A289DDB88004F94F4 /* MetaInfoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA39F59289DDB88004F94F4 /* MetaInfoListViewController.swift */; };
 		2BA39F5C289DDC3D004F94F4 /* MetaInfoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA39F5B289DDC3D004F94F4 /* MetaInfoListItem.swift */; };
@@ -46,7 +43,9 @@
 		2BACABBF291D890E0004014E /* TwoWayBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BACABBE291D890E0004014E /* TwoWayBinding.swift */; };
 		2BB3F7F228DC3D3000D12CDF /* AppInfoListEditableDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB3F7F128DC3D3000D12CDF /* AppInfoListEditableDisplayCell.swift */; };
 		2BB3F7F428DC3D4E00D12CDF /* ListEditableDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB3F7F328DC3D4E00D12CDF /* ListEditableDisplayCell.swift */; };
-		E74BF3C5E3696FCD975D4A83 /* libPods-TikTokShareDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5004C48948CA181885174C6 /* libPods-TikTokShareDemo.a */; };
+		9F762E1D2A5721930023F6B4 /* TikTokOpenAuthSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 9F762E1C2A5721930023F6B4 /* TikTokOpenAuthSDK */; };
+		9F762E1F2A5721930023F6B4 /* TikTokOpenSDKCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9F762E1E2A5721930023F6B4 /* TikTokOpenSDKCore */; };
+		9F762E212A5721930023F6B4 /* TikTokOpenShareSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 9F762E202A5721930023F6B4 /* TikTokOpenShareSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,11 +66,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1AB6A368B6981F8D635A97B2 /* Pods-TikTokShareDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTokShareDemo.debug.xcconfig"; path = "Target Support Files/Pods-TikTokShareDemo/Pods-TikTokShareDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		2BA39EB1289A2F80004F94F4 /* TikTokShareDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTokShareDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA39EB4289A2F80004F94F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2BA39EB8289A2F80004F94F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2BA39EBB289A2F80004F94F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2BA39EBD289A2F80004F94F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BA39EC0289A2F80004F94F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BA39EC2289A2F80004F94F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,7 +92,6 @@
 		2BA39F31289AF20D004F94F4 /* AppInfoListDisplayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoListDisplayCell.swift; sourceTree = "<group>"; };
 		2BA39F3D289C36F0004F94F4 /* AppInfoListContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoListContent.swift; sourceTree = "<group>"; };
 		2BA39F52289CEE2D004F94F4 /* SelectMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMediaViewController.swift; sourceTree = "<group>"; };
-		2BA39F54289DD242004F94F4 /* SelectMediaDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMediaDelegate.swift; sourceTree = "<group>"; };
 		2BA39F56289DDB15004F94F4 /* MetaInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaInfoViewController.swift; sourceTree = "<group>"; };
 		2BA39F59289DDB88004F94F4 /* MetaInfoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaInfoListViewController.swift; sourceTree = "<group>"; };
 		2BA39F5B289DDC3D004F94F4 /* MetaInfoListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaInfoListItem.swift; sourceTree = "<group>"; };
@@ -113,8 +108,7 @@
 		2BB36B182A01A05F00E563F9 /* TikTokShareDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TikTokShareDemo.entitlements; sourceTree = "<group>"; };
 		2BB3F7F128DC3D3000D12CDF /* AppInfoListEditableDisplayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoListEditableDisplayCell.swift; sourceTree = "<group>"; };
 		2BB3F7F328DC3D4E00D12CDF /* ListEditableDisplayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEditableDisplayCell.swift; sourceTree = "<group>"; };
-		A5004C48948CA181885174C6 /* libPods-TikTokShareDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TikTokShareDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C4EE3505174D13EE69AAD6EA /* Pods-TikTokShareDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTokShareDemo.release.xcconfig"; path = "Target Support Files/Pods-TikTokShareDemo/Pods-TikTokShareDemo.release.xcconfig"; sourceTree = "<group>"; };
+		9F762E182A57201E0023F6B4 /* tiktok-opensdk-ios */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "tiktok-opensdk-ios"; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +116,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E74BF3C5E3696FCD975D4A83 /* libPods-TikTokShareDemo.a in Frameworks */,
+				9F762E1F2A5721930023F6B4 /* TikTokOpenSDKCore in Frameworks */,
+				9F762E212A5721930023F6B4 /* TikTokOpenShareSDK in Frameworks */,
+				9F762E1D2A5721930023F6B4 /* TikTokOpenAuthSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,10 +142,12 @@
 		2BA39EA8289A2F80004F94F4 = {
 			isa = PBXGroup;
 			children = (
+				9F762E182A57201E0023F6B4 /* tiktok-opensdk-ios */,
+				9F762E142A571F290023F6B4 /* Packages */,
 				2BA39EB3289A2F80004F94F4 /* TikTokShareDemo */,
 				2BA39EB2289A2F80004F94F4 /* Products */,
 				817F98DB9078F2C5DA67DA65 /* Pods */,
-				377BC3B7807A7F0564EB4628 /* Frameworks */,
+				9F762E1B2A5721930023F6B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,9 +172,7 @@
 				2BA39F00289A359A004F94F4 /* Utils */,
 				2BA39EFD289A358E004F94F4 /* List */,
 				2BA39EB4289A2F80004F94F4 /* AppDelegate.swift */,
-				2BA39EB8289A2F80004F94F4 /* ViewController.swift */,
 				2BA39F0C289A371B004F94F4 /* BottomBarViewController.swift */,
-				2BA39EBA289A2F80004F94F4 /* Main.storyboard */,
 				2BA39EBD289A2F80004F94F4 /* Assets.xcassets */,
 				2BA39EBF289A2F80004F94F4 /* LaunchScreen.storyboard */,
 				2BA39EC2289A2F80004F94F4 /* Info.plist */,
@@ -230,7 +226,6 @@
 			isa = PBXGroup;
 			children = (
 				2BA39F52289CEE2D004F94F4 /* SelectMediaViewController.swift */,
-				2BA39F54289DD242004F94F4 /* SelectMediaDelegate.swift */,
 			);
 			path = SelectPage;
 			sourceTree = "<group>";
@@ -276,21 +271,25 @@
 			path = MetaInfoList;
 			sourceTree = "<group>";
 		};
-		377BC3B7807A7F0564EB4628 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A5004C48948CA181885174C6 /* libPods-TikTokShareDemo.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		817F98DB9078F2C5DA67DA65 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1AB6A368B6981F8D635A97B2 /* Pods-TikTokShareDemo.debug.xcconfig */,
-				C4EE3505174D13EE69AAD6EA /* Pods-TikTokShareDemo.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9F762E142A571F290023F6B4 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		9F762E1B2A5721930023F6B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,18 +299,21 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2BA39EDB289A2F81004F94F4 /* Build configuration list for PBXNativeTarget "TikTokShareDemo" */;
 			buildPhases = (
-				8FBF12C09CE81D2EDD3DDCEF /* [CP] Check Pods Manifest.lock */,
 				2BA39EAD289A2F80004F94F4 /* Sources */,
 				2BA39EAE289A2F80004F94F4 /* Frameworks */,
 				2BA39EAF289A2F80004F94F4 /* Resources */,
 				2BA39EE4289A3004004F94F4 /* ShellScript */,
-				E0491F97F3389287AD2DF3E1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = TikTokShareDemo;
+			packageProductDependencies = (
+				9F762E1C2A5721930023F6B4 /* TikTokOpenAuthSDK */,
+				9F762E1E2A5721930023F6B4 /* TikTokOpenSDKCore */,
+				9F762E202A5721930023F6B4 /* TikTokOpenShareSDK */,
+			);
 			productName = TikTokShareDemo;
 			productReference = 2BA39EB1289A2F80004F94F4 /* TikTokShareDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -403,7 +405,6 @@
 			files = (
 				2BA39EC1289A2F80004F94F4 /* LaunchScreen.storyboard in Resources */,
 				2BA39EBE289A2F80004F94F4 /* Assets.xcassets in Resources */,
-				2BA39EBC289A2F80004F94F4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +427,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		2BA39EE4289A3004004F94F4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -440,45 +442,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint --fix\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		8FBF12C09CE81D2EDD3DDCEF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TikTokShareDemo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E0491F97F3389287AD2DF3E1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TikTokShareDemo/Pods-TikTokShareDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TikTokShareDemo/Pods-TikTokShareDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TikTokShareDemo/Pods-TikTokShareDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -496,13 +459,11 @@
 				2BA39F09289A359A004F94F4 /* UIViewExt.swift in Sources */,
 				2BA39EFF289A358E004F94F4 /* ListBase.swift in Sources */,
 				2BA39F30289AF1F9004F94F4 /* AppInfoListSwitchCell.swift in Sources */,
-				2BA39EB9289A2F80004F94F4 /* ViewController.swift in Sources */,
 				2BA39F23289AE4A1004F94F4 /* AppInfoViewController.swift in Sources */,
 				2BA39F5A289DDB88004F94F4 /* MetaInfoListViewController.swift in Sources */,
 				2BA39F57289DDB15004F94F4 /* MetaInfoViewController.swift in Sources */,
 				2BAAC55D290CAC5E00305815 /* UIColorExt.swift in Sources */,
 				2BA39F2A289AF06A004F94F4 /* AppInfoListViewController.swift in Sources */,
-				2BA39F55289DD242004F94F4 /* SelectMediaDelegate.swift in Sources */,
 				2BACABBF291D890E0004014E /* TwoWayBinding.swift in Sources */,
 				2BA39F64289DE3C2004F94F4 /* MetaInfoListHeader.swift in Sources */,
 				2BA39F07289A359A004F94F4 /* UITableViewExt.swift in Sources */,
@@ -556,14 +517,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2BA39EBA289A2F80004F94F4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2BA39EBB289A2F80004F94F4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2BA39EBF289A2F80004F94F4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -625,7 +578,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -679,7 +632,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -691,7 +644,6 @@
 		};
 		2BA39EDC289A2F81004F94F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AB6A368B6981F8D635A97B2 /* Pods-TikTokShareDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -707,9 +659,9 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Share demo app need access photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -728,7 +680,6 @@
 		};
 		2BA39EDD289A2F81004F94F4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4EE3505174D13EE69AAD6EA /* Pods-TikTokShareDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -743,10 +694,9 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Share demo app need access photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -884,6 +834,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9F762E1C2A5721930023F6B4 /* TikTokOpenAuthSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TikTokOpenAuthSDK;
+		};
+		9F762E1E2A5721930023F6B4 /* TikTokOpenSDKCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TikTokOpenSDKCore;
+		};
+		9F762E202A5721930023F6B4 /* TikTokOpenShareSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TikTokOpenShareSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2BA39EA9289A2F80004F94F4 /* Project object */;
 }
