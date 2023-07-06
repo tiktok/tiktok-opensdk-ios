@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "tiktok-opensdk-ios",
+    name: "TikTokOpenSDK",
     defaultLocalization: "en",
     platforms: [
         .iOS(.v11)
