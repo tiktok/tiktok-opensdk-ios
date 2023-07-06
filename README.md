@@ -136,11 +136,10 @@ Your app is responsible for maintaining a strong reference to the request in ord
 
 ## Demos
 
-Minimum iOS version for these demo apps is iOS 11.0.
+Minimum iOS version for the demo apps is iOS 14.0 for ShareDemo and iOS 12.0 for LoginDemo.
 
-1. Find a demo app for Login Kit or Share Kit under `/LoginDemo` or `/ShareDemo` respectively, and download it.
-2. `cd` into the directory and give it a `pod install`.
-3. `open TikTokXXXDemo.xcworkspace` and run the project to view the kit in action.
+1. Open `LoginDemo/TikTokLoginDemo.xcodeproj` or `ShareDemo/TikTokShareDemo.xcodeproj`.
+2. Simply run the project to view the kit in action.
 
 ## License
 
