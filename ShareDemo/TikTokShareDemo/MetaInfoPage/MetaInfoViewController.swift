@@ -16,6 +16,8 @@ class MetaInfoViewController: UIViewController {
     var listViewModel: MetaInfoListViewModel?
 
     func setUpLayout() {
+        
+        metaListViewController.view.translatesAutoresizingMaskIntoConstraints = false
         add(childViewController: metaListViewController)
         add(childViewController: bottomBarViewController)
 
@@ -33,7 +35,7 @@ class MetaInfoViewController: UIViewController {
         ])
     }
 
-    init(withMediaType type: QBImagePickerMediaType, assets: [String], customClientKey: String? = nil) {
+    init(withMediaType type: TikTokShareMediaType, assets: [String], customClientKey: String? = nil) {
         super.init(nibName: nil, bundle: nil)
         setUp(withMediaType: type, assets: assets, customClientKey: customClientKey)
     }
@@ -42,7 +44,7 @@ class MetaInfoViewController: UIViewController {
         super.init(coder: coder)
     }
 
-    private func setUp(withMediaType type: QBImagePickerMediaType, assets: [String], customClientKey: String? = nil) {
+    private func setUp(withMediaType type: TikTokShareMediaType, assets: [String], customClientKey: String? = nil) {
         guard assets.count > 0 else {
             return
         }
@@ -51,7 +53,7 @@ class MetaInfoViewController: UIViewController {
         listViewModel?.customClientKey = customClientKey ?? (Bundle.main.infoDictionary?["TikTokClientKey"] as? String)
         listViewModel?.callerUrlScheme = (Bundle.main.infoDictionary?["TikTokClientKey"] as? String)
         listViewModel?.media = assets
-        listViewModel?.mediaType = type == .video ? .video : .image
+        listViewModel?.mediaType = type
         metaListViewController.viewModel = listViewModel
     }
 

@@ -6,14 +6,14 @@
  */
 
 import UIKit
+import PhotosUI
+import TikTokOpenShareSDK
 
-class SelectMediaViewController: UIViewController, QBImagePickerControllerDelegate {
+class SelectMediaViewController: UIViewController {
     let mainColor = UIColor(red: 254/255.0, green: 44/255.0, blue: 85/255.0, alpha: 1).cgColor
     let customClientKey: String?
-
-    private let delegate: SelectMediaDelegate = {
-        SelectMediaDelegate()
-    }()
+    
+    private var mediaType: TikTokShareMediaType?
 
     private let imgView: UIImageView = {
         let img = UIImage(named: "PicThumbUp", in: .main, compatibleWith: nil)
@@ -88,60 +88,45 @@ class SelectMediaViewController: UIViewController, QBImagePickerControllerDelega
         return button
     }()
 
-    private var container: UIView = {
-        let container = UIView()
-        container.translatesAutoresizingMaskIntoConstraints = false
-        container.backgroundColor = .clear
-        return container
-    }()
-
     private func setUpLayout() {
-        view.addSubview(container)
+
+        view.addSubview(imgView)
+        view.addSubview(titleView)
+        view.addSubview(subtitleView)
+        view.addSubview(videoBtn)
+        view.addSubview(imageBtn)
 
         NSLayoutConstraint.activate([
-            container.leftAnchor.constraint(equalTo: view.leftSafeAnchor, constant: 16.0),
-            container.rightAnchor.constraint(equalTo: view.rightSafeAnchor, constant: -16.0),
-            container.topAnchor.constraint(equalTo: view.topSafeAnchor),
-            container.bottomAnchor.constraint(equalTo: view.bottomSafeAnchor)
-        ])
-
-        container.addSubview(imgView)
-        container.addSubview(titleView)
-        container.addSubview(subtitleView)
-        container.addSubview(videoBtn)
-        container.addSubview(imageBtn)
-
-        NSLayoutConstraint.activate([
-            imgView.topAnchor.constraint(equalTo: container.topAnchor, constant: 128.0),
+            imgView.topAnchor.constraint(equalTo: view.topAnchor, constant: 128.0),
             imgView.heightAnchor.constraint(equalToConstant: 160.0),
-            imgView.widthAnchor.constraint(equalTo: container.widthAnchor),
-            imgView.centerXAnchor.constraint(equalTo: container.centerXAnchor)
+            imgView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            imgView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
 
         NSLayoutConstraint.activate([
             titleView.topAnchor.constraint(equalTo: imgView.bottomAnchor, constant: 48.0),
             titleView.heightAnchor.constraint(equalToConstant: 24.0),
-            titleView.centerXAnchor.constraint(equalTo: container.centerXAnchor)
+            titleView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
 
         NSLayoutConstraint.activate([
             subtitleView.topAnchor.constraint(equalTo: titleView.bottomAnchor, constant: 8.0),
-            subtitleView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-            subtitleView.leftAnchor.constraint(equalTo: container.leftAnchor),
-            subtitleView.rightAnchor.constraint(equalTo: container.rightAnchor)
+            subtitleView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            subtitleView.leftAnchor.constraint(equalTo: view.layoutMarginsGuide.leftAnchor),
+            subtitleView.rightAnchor.constraint(equalTo: view.layoutMarginsGuide.rightAnchor)
         ])
 
         NSLayoutConstraint.activate([
-            videoBtn.leftAnchor.constraint(equalTo: container.leftAnchor),
-            videoBtn.rightAnchor.constraint(equalTo: container.rightAnchor),
+            videoBtn.leftAnchor.constraint(equalTo: view.layoutMarginsGuide.leftAnchor),
+            videoBtn.rightAnchor.constraint(equalTo: view.layoutMarginsGuide.rightAnchor),
             videoBtn.bottomAnchor.constraint(equalTo: imageBtn.topAnchor, constant: -16.0),
             videoBtn.heightAnchor.constraint(equalToConstant: 48.0)
         ])
 
         NSLayoutConstraint.activate([
-            imageBtn.leftAnchor.constraint(equalTo: container.leftAnchor),
-            imageBtn.rightAnchor.constraint(equalTo: container.rightAnchor),
-            imageBtn.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -3.5),
+            imageBtn.leftAnchor.constraint(equalTo: view.layoutMarginsGuide.leftAnchor),
+            imageBtn.rightAnchor.constraint(equalTo: view.layoutMarginsGuide.rightAnchor),
+            imageBtn.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -3.5),
             imageBtn.heightAnchor.constraint(equalToConstant: 48.0)
         ])
     }
@@ -158,7 +143,6 @@ class SelectMediaViewController: UIViewController, QBImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLayout()
-        self.delegate.viewController = self
         title = "Select Media"
         view.backgroundColor = .backgroundColor
         videoBtn.addTarget(self, action: #selector(tapSelectVideoBtn), for: .touchUpInside)
@@ -172,11 +156,60 @@ class SelectMediaViewController: UIViewController, QBImagePickerControllerDelega
 
     @objc
     private func tapSelectVideoBtn() {
-        delegate.selectMedia(self, mediaType: .video)
+        
+        mediaType = .video
+        
+        var config = PHPickerConfiguration.init(photoLibrary: .shared())
+        config.selectionLimit = 3
+        config.filter = .videos
+        
+        let controller = PHPickerViewController(configuration: config)
+        controller.delegate = self
+        
+        present(controller, animated: true)
     }
 
     @objc
     private func tapSelectImageBtn() {
-        delegate.selectMedia(self, mediaType: .image)
+        
+        mediaType = .image
+        
+        var config = PHPickerConfiguration.init(photoLibrary: .shared())
+        config.selectionLimit = 3
+        config.filter = .images
+        
+        let controller = PHPickerViewController(configuration: config)
+        controller.delegate = self
+        
+        present(controller, animated: true)
     }
+}
+
+extension SelectMediaViewController: PHPickerViewControllerDelegate {
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        
+        guard !results.isEmpty else {
+            picker.dismiss(animated: true)
+            return
+        }
+        
+        var assets: [String] = []
+        
+        for result in results {
+            guard let identifier = result.assetIdentifier else {
+                continue
+            }
+            assets.append(identifier)
+        }
+    
+        picker.dismiss(animated: true) {
+            
+            let viewController = MetaInfoViewController(withMediaType: self.mediaType!, assets: assets, customClientKey: self.customClientKey)
+            self.navigationController?.pushViewController(viewController, animated: true)
+            
+        }
+        
+    }
+
 }

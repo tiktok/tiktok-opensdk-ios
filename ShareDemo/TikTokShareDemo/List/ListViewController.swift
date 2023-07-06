@@ -75,7 +75,7 @@ class ListViewController<T: ListItem, S: ListSection, VM: ListViewModel>: UIView
     }()
 
     override func viewDidLoad() {
-        view.translatesAutoresizingMaskIntoConstraints = false
+        super.viewDidLoad()
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
