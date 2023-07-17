@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>None</string>
+			<key>CFBundleURLName</key>
+			<string>TikTok</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>${TikTokClientKey}</string>
+			</array>
+		</dict>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>tiktoksharesdk</string>
+		<string>snssdk1233</string>
+		<string>snssdk1180</string>
+		<string>tiktokopensdk</string>
+	</array>
+	<key>TikTokClientKey</key>
+	<string>${TikTokClientKey}</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+</dict>
+</plist>
