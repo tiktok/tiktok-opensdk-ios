@@ -29,14 +29,6 @@ class TikTokShareResponseTest: XCTestCase {
         }
     }
     
-    /*
-    func testUnsupportedScheme() {
-        let url = URL(string: "https://www.incorrecttest.com/test?from_platform=invalid-scheme&code=test-auth-code&request_id=test-request-id&error_code=0&response_id=test-response-id&state=test-state")!
-        XCTAssertThrowsError(try TikTokShareResponse(fromURL: url, redirectURI: "https://www.test.com/test")) { error in
-            XCTAssertEqual(error as? TikTokResponseError, TikTokResponseError.unsupportedScheme)
-        }
-    }*/
-    
     func testWrongDomain() {
         let url = URL(string: "https://www.incorrecttest.com/test?from_platform=tiktoksharesdk&code=test-auth-code&request_id=test-request-id&error_code=0&response_id=test-response-id&state=test-state")!
         XCTAssertThrowsError(try TikTokShareResponse(fromURL: url, redirectURI: "https://www.test.com/test")) { error in

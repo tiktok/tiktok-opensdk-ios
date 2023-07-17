@@ -13,30 +13,26 @@ import TikTokOpenSDKCore
 class TikTokShareService: NSObject, TikTokRequestResponseHandling {
     private(set) var completion: ((TikTokBaseResponse) -> Void)?
     private(set) var redirectURI: String?
-    
-    //MARK: - TikTokRequestHandling
-    static func buildOpenURL(from request: TikTokBaseRequest) -> URL? {
-        let base = "\(TikTokInfo.universalLink)\(TikTokInfo.universalLinkSharePath)"
-        guard var urlComps = URLComponents(string: base) else {
-            return nil
-        }
-        urlComps.queryItems = buildOpenURLQueryParams(from: request)
-        return urlComps.url
+    private let urlOpener: TikTokURLOpener
+
+    init(urlOpener: TikTokURLOpener = UIApplication.shared) {
+        self.urlOpener = urlOpener
     }
-    
+
+    //MARK: - TikTokRequestHandling
     func handleRequest(_ request: TikTokBaseRequest, completion: ((TikTokBaseResponse) -> Void)?) -> Bool {
-        guard let url = Self.buildOpenURL(from: request) else {
+        guard let url = buildOpenURL(from: request) else {
             return false
         }
         self.completion = completion
         self.redirectURI = request.redirectURI
-        if !TikTokUtils.TikTokIsInstalled() {
-            if let tiktokNotInstalledURL = self.constructErrorURL(errorCode: "-1", errorDescription: "TikTok is not installed") {
-                self.handleResponseURL(url: tiktokNotInstalledURL)
+        if !urlOpener.isTikTokInstalled() {
+            if let tiktokNotInstalledURL = constructErrorURL(errorCode: "-1", errorDescription: "TikTok is not installed") {
+                handleResponseURL(url: tiktokNotInstalledURL)
             }
             return false
         }
-        UIApplication.shared.open(url, options: [:]) { [weak self] success in
+        urlOpener.open(url, options:[:]) { [weak self] success in
             guard let self = self else { return }
             if !success, let cancelURL = self.constructErrorURL(errorCode: "-2", errorDescription: "User cancelled share") {
                 self.handleResponseURL(url: cancelURL)
@@ -45,10 +41,18 @@ class TikTokShareService: NSObject, TikTokRequestResponseHandling {
         return true
     }
     
+    func buildOpenURL(from req: TikTokBaseRequest) -> URL? {
+        guard let shareReq = req as? TikTokShareRequest else { return nil }
+        guard let baseURL = URL(string:"\(TikTokInfo.universalLink)\(TikTokInfo.universalLinkSharePath)") else { return nil }
+        guard var urlComps = URLComponents(url: baseURL, resolvingAgainstBaseURL: false) else { return nil }
+        urlComps.queryItems = shareReq.convertToQueryParams()
+        return urlComps.url
+    }
+    
     // MARK: - TikTokResponseHandling
     @discardableResult
     func handleResponseURL(url: URL) -> Bool {
-        guard let res = try? TikTokShareResponse(fromURL: url, redirectURI: self.redirectURI ?? "") else { return false }
+        guard let res = try? TikTokShareResponse(fromURL: url, redirectURI: redirectURI ?? "") else { return false }
         return handleResponse(res)
     }
     
@@ -60,7 +64,7 @@ class TikTokShareService: NSObject, TikTokRequestResponseHandling {
     }
 
     // MARK: - Private
-    private static func buildOpenURLQueryParams(from request: TikTokBaseRequest) -> [URLQueryItem]? {
+    private func buildOpenURLQueryParams(from request: TikTokBaseRequest) -> [URLQueryItem]? {
         guard let req = request as? TikTokShareRequest else {
             return nil
         }
@@ -77,7 +81,7 @@ class TikTokShareService: NSObject, TikTokRequestResponseHandling {
     
     //MARK: - Construct error URL
     private func constructErrorURL(errorCode: String, errorDescription: String) -> URL? {
-        guard let redirectURI = self.redirectURI else { return nil }
+        guard let redirectURI = redirectURI else { return nil }
         guard let url = URL(string: redirectURI) else { return nil }
         guard var urlComps = URLComponents(url: url, resolvingAgainstBaseURL: false) else { return nil }
         urlComps.queryItems = [

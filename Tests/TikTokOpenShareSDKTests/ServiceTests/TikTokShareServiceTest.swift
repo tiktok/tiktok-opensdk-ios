@@ -15,8 +15,9 @@ class TikTokShareServiceTest: XCTestCase {
     }
     
     func testBuildOpenURL_empty() {
-        let req = TikTokShareRequest(localIdentifiers: [], mediaType: .video, redirectURI: "https://www.test.com/test")
-        let url = TikTokShareService.buildOpenURL(from: req)
+        let shareReq = TikTokShareRequest(localIdentifiers: [], mediaType: .video, redirectURI: "https://www.test.com/test")
+        let shareService = TikTokShareService(urlOpener: MockURLOpener())
+        let url = shareService.buildOpenURL(from: shareReq)
         XCTAssertNotNil(url)
         let comp = URLComponents(url: url!, resolvingAgainstBaseURL: false)
         XCTAssertNotNil(comp)
@@ -25,9 +26,11 @@ class TikTokShareServiceTest: XCTestCase {
     }
     
     func testBuildOpenURL_success() {
-        let req = TikTokShareRequest(localIdentifiers: ["1", "2"], mediaType: .video, redirectURI: "https://www.test.com/test")
-        req.state = "test-state"
-        let url = TikTokShareService.buildOpenURL(from: req)
+        let shareReq = TikTokShareRequest(localIdentifiers: ["1", "2"], mediaType: .video, redirectURI: "https://www.test.com/test")
+        let shareService = TikTokShareService(urlOpener: MockURLOpener())
+        shareReq.service = shareService
+        shareReq.state = "test-state"
+        let url = shareService.buildOpenURL(from: shareReq)
         XCTAssertNotNil(url)
         let comps = URLComponents(url: url!, resolvingAgainstBaseURL: false)
         XCTAssertNotNil(comps)
@@ -44,7 +47,8 @@ class TikTokShareServiceTest: XCTestCase {
     func testHandleResponseURL_success() {
         let redirectURI = "https://www.test.com/test"
         let shareRequest = TikTokShareRequest(localIdentifiers: [], mediaType: .video, redirectURI: redirectURI)
-        let shareService = TikTokShareService()
+        let shareService = TikTokShareService(urlOpener: MockURLOpener())
+        shareRequest.service = shareService
         let tiktokExpectation = XCTestExpectation(description: "Expect to open TikTok")
         var response: TikTokShareResponse?
         var isExecuted = false
@@ -62,7 +66,8 @@ class TikTokShareServiceTest: XCTestCase {
     func testHandleResponseURL_invalidRedirectURI() {
         let redirectURI = "https://www.test.com/test"
         let shareRequest = TikTokShareRequest(localIdentifiers: [], mediaType: .video, redirectURI: redirectURI)
-        let shareService = TikTokShareService()
+        let shareService = TikTokShareService(urlOpener: MockURLOpener())
+        shareRequest.service = shareService
         let tiktokExpectation = XCTestExpectation(description: "Expect to open TikTok")
         var response: TikTokShareResponse?
         var isExecuted = false

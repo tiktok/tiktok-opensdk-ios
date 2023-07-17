@@ -20,7 +20,7 @@ DerivedData
 *.ipa
 *.xcodeproj/
 *.pbxproj
-
+*.swiftpm/
 # Bundler
 .bundle
 

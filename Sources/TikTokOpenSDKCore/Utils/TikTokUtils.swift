@@ -74,15 +74,8 @@ public class TikTokUtils : NSObject {
     }
     
     @objc
-    public class func TikTokIsInstalled() -> Bool {
-        for scheme in TikTokInfo.schemes {
-            if let schemeURL = URL(string: "\(scheme)://") {
-                if UIApplication.shared.canOpenURL(schemeURL) {
-                    return true
-                }
-            }
-        }
-        return false
+    public class func isTikTokInstalled() -> Bool {
+        return UIApplication.shared.isTikTokInstalled()
     }
 
 }

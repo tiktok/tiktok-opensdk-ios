@@ -39,7 +39,7 @@ let appInfoLIstContent: [AppInfoListSection] = [
             cellType: AppInfoListDisplayCell.self,
             propagateChange: nil,
             setDefault: { _, item in
-                item.default = TikTokUtils.TikTokIsInstalled() ? "YES" : "NO"
+                item.default = TikTokUtils.isTikTokInstalled() ? "YES" : "NO"
             }
         )
     ])

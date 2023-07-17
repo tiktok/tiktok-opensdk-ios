@@ -31,6 +31,8 @@ class TikTokAuthRequestTest: XCTestCase {
     func testSend() {
         var isCalled = false
         let req = TikTokAuthRequest(scopes: ["p1","p2"], redirectURI: "https://www.test.com/test")
+        let service = TikTokAuthService(urlOpener: MockURLOpener())
+        req.service = service
         req.isWebAuth = false
         XCTAssertTrue(req.send() { res in
             isCalled = true

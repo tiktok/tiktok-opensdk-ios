@@ -9,21 +9,18 @@ import Foundation
 import UIKit
 @testable import TikTokOpenSDKCore
 
-@objc
-open class MockApplication: NSObject {
-    @objc
-    func canOpenURL(_ url: URL) -> Bool {
+open class MockURLOpener: TikTokURLOpener {
+    public func canOpenURL(_ url: URL) -> Bool {
         return true
     }
     
-    @objc
-    func openURL(_ url: URL) -> Bool {
-        return true
-    }
-    
-    @objc
-    func open(_ url: URL, options: [UIApplication.OpenExternalURLOptionsKey : Any] = [:], completionHandler completion: ((Bool) -> Void)? = nil) {
+    public func open(_ url: URL, options: [UIApplication.OpenExternalURLOptionsKey : Any], completionHandler completion: ((Bool) -> Void)?) {
         completion?(true)
+    }
+    
+    @objc
+    public func isTikTokInstalled() -> Bool {
+        return true
     }
 }
 
@@ -48,8 +45,6 @@ class TikTokTestEnv {
             initialized = true
             ttsdk_swizzleBundleIdentifier()
             ttsdk_swizzleBundleInfoDictionary()
-            ttsdk_swizzleApplicationCanOpenURLMethod()
-            ttsdk_swizzleApplicationOpenURLMethod()
         }
     }
     
@@ -65,21 +60,6 @@ class TikTokTestEnv {
                                 #selector(getter: Bundle.bundleIdentifier),
                                 MockBundle.self,
                                 #selector(MockBundle.bundleIdentifier))
-    }
-    
-    private static func ttsdk_swizzleApplicationCanOpenURLMethod() {
-        enableTestMethodSwizzle(UIApplication.self,
-                                #selector(UIApplication.canOpenURL(_:)),
-                                MockApplication.self,
-                                #selector(MockApplication.canOpenURL(_:)))
-    }
-
-    private static func ttsdk_swizzleApplicationOpenURLMethod() {
-        enableTestMethodSwizzle(UIApplication.self,
-                                #selector(UIApplication.open(_:options:completionHandler:)),
-                                MockApplication.self,
-                                #selector(MockApplication.open(_:options:completionHandler:)))
-
     }
     
     private static func enableTestMethodSwizzle(_ cls1: AnyClass?, _ selector1: Selector, _ cls2: AnyClass?, _ selector2: Selector) {

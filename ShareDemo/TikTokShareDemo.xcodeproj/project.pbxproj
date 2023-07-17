@@ -48,31 +48,12 @@
 		9F762E212A5721930023F6B4 /* TikTokOpenShareSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 9F762E202A5721930023F6B4 /* TikTokOpenShareSDK */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		2BA39EC8289A2F81004F94F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2BA39EA9289A2F80004F94F4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2BA39EB0289A2F80004F94F4;
-			remoteInfo = TikTokShareDemo;
-		};
-		2BA39ED2289A2F81004F94F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2BA39EA9289A2F80004F94F4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2BA39EB0289A2F80004F94F4;
-			remoteInfo = TikTokShareDemo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		2BA39EB1289A2F80004F94F4 /* TikTokShareDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTokShareDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA39EB4289A2F80004F94F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BA39EBD289A2F80004F94F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BA39EC0289A2F80004F94F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BA39EC2289A2F80004F94F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2BA39EC7289A2F81004F94F4 /* TikTokShareDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TikTokShareDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BA39ED1289A2F81004F94F4 /* TikTokShareDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TikTokShareDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA39EFE289A358E004F94F4 /* ListBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListBase.swift; sourceTree = "<group>"; };
 		2BA39F02289A359A004F94F4 /* UITableViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
 		2BA39F04289A359A004F94F4 /* UIViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
@@ -103,7 +84,6 @@
 		2BA39F67289DF329004F94F4 /* MetaInfoListTextInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaInfoListTextInputCell.swift; sourceTree = "<group>"; };
 		2BA39F80289F0FBD004F94F4 /* MetaInfoListDisplayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaInfoListDisplayCell.swift; sourceTree = "<group>"; };
 		2BAAC55C290CAC5E00305815 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
-		2BACABBD291C67100004014E /* TikTokShareDemo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TikTokShareDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		2BACABBE291D890E0004014E /* TwoWayBinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoWayBinding.swift; sourceTree = "<group>"; };
 		2BB36B182A01A05F00E563F9 /* TikTokShareDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TikTokShareDemo.entitlements; sourceTree = "<group>"; };
 		2BB3F7F128DC3D3000D12CDF /* AppInfoListEditableDisplayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoListEditableDisplayCell.swift; sourceTree = "<group>"; };
@@ -122,20 +102,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2BA39EC4289A2F81004F94F4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2BA39ECE289A2F81004F94F4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -143,10 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				9F762E182A57201E0023F6B4 /* tiktok-opensdk-ios */,
-				9F762E142A571F290023F6B4 /* Packages */,
 				2BA39EB3289A2F80004F94F4 /* TikTokShareDemo */,
 				2BA39EB2289A2F80004F94F4 /* Products */,
-				817F98DB9078F2C5DA67DA65 /* Pods */,
 				9F762E1B2A5721930023F6B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -155,8 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				2BA39EB1289A2F80004F94F4 /* TikTokShareDemo.app */,
-				2BA39EC7289A2F81004F94F4 /* TikTokShareDemoTests.xctest */,
-				2BA39ED1289A2F81004F94F4 /* TikTokShareDemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				2BB36B182A01A05F00E563F9 /* TikTokShareDemo.entitlements */,
-				2BACABBD291C67100004014E /* TikTokShareDemo-Bridging-Header.h */,
 				2BA39F13289A3A2F004F94F4 /* MetaInfoPage */,
 				2BA39F11289A3A1A004F94F4 /* SelectPage */,
 				2BA39F10289A3A08004F94F4 /* AppInfoPage */,
@@ -271,20 +232,6 @@
 			path = MetaInfoList;
 			sourceTree = "<group>";
 		};
-		817F98DB9078F2C5DA67DA65 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		9F762E142A571F290023F6B4 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 		9F762E1B2A5721930023F6B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,42 +265,6 @@
 			productReference = 2BA39EB1289A2F80004F94F4 /* TikTokShareDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2BA39EC6289A2F81004F94F4 /* TikTokShareDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2BA39EDE289A2F81004F94F4 /* Build configuration list for PBXNativeTarget "TikTokShareDemoTests" */;
-			buildPhases = (
-				2BA39EC3289A2F81004F94F4 /* Sources */,
-				2BA39EC4289A2F81004F94F4 /* Frameworks */,
-				2BA39EC5289A2F81004F94F4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2BA39EC9289A2F81004F94F4 /* PBXTargetDependency */,
-			);
-			name = TikTokShareDemoTests;
-			productName = TikTokShareDemoTests;
-			productReference = 2BA39EC7289A2F81004F94F4 /* TikTokShareDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		2BA39ED0289A2F81004F94F4 /* TikTokShareDemoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2BA39EE1289A2F81004F94F4 /* Build configuration list for PBXNativeTarget "TikTokShareDemoUITests" */;
-			buildPhases = (
-				2BA39ECD289A2F81004F94F4 /* Sources */,
-				2BA39ECE289A2F81004F94F4 /* Frameworks */,
-				2BA39ECF289A2F81004F94F4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2BA39ED3289A2F81004F94F4 /* PBXTargetDependency */,
-			);
-			name = TikTokShareDemoUITests;
-			productName = TikTokShareDemoUITests;
-			productReference = 2BA39ED1289A2F81004F94F4 /* TikTokShareDemoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -367,14 +278,6 @@
 					2BA39EB0289A2F80004F94F4 = {
 						CreatedOnToolsVersion = 13.3;
 						LastSwiftMigration = 1330;
-					};
-					2BA39EC6289A2F81004F94F4 = {
-						CreatedOnToolsVersion = 13.3;
-						TestTargetID = 2BA39EB0289A2F80004F94F4;
-					};
-					2BA39ED0289A2F81004F94F4 = {
-						CreatedOnToolsVersion = 13.3;
-						TestTargetID = 2BA39EB0289A2F80004F94F4;
 					};
 				};
 			};
@@ -392,8 +295,6 @@
 			projectRoot = "";
 			targets = (
 				2BA39EB0289A2F80004F94F4 /* TikTokShareDemo */,
-				2BA39EC6289A2F81004F94F4 /* TikTokShareDemoTests */,
-				2BA39ED0289A2F81004F94F4 /* TikTokShareDemoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -405,20 +306,6 @@
 			files = (
 				2BA39EC1289A2F80004F94F4 /* LaunchScreen.storyboard in Resources */,
 				2BA39EBE289A2F80004F94F4 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2BA39EC5289A2F81004F94F4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2BA39ECF289A2F81004F94F4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,34 +374,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2BA39EC3289A2F81004F94F4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2BA39ECD289A2F81004F94F4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		2BA39EC9289A2F81004F94F4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2BA39EB0289A2F80004F94F4 /* TikTokShareDemo */;
-			targetProxy = 2BA39EC8289A2F81004F94F4 /* PBXContainerItemProxy */;
-		};
-		2BA39ED3289A2F81004F94F4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2BA39EB0289A2F80004F94F4 /* TikTokShareDemo */;
-			targetProxy = 2BA39ED2289A2F81004F94F4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2BA39EBF289A2F80004F94F4 /* LaunchScreen.storyboard */ = {
@@ -661,13 +521,14 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tiktok.open.sharekitdemo.inhouse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiktok.open.sharekitdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -696,101 +557,20 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tiktok.open.sharekitdemo.inhouse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiktok.open.sharekitdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "TikTokShareDemo/TikTokShareDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		2BA39EDF289A2F81004F94F4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 26L8JL6QTW;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = TikTok.TikTokShareDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TikTokShareDemo.app/TikTokShareDemo";
-			};
-			name = Debug;
-		};
-		2BA39EE0289A2F81004F94F4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 26L8JL6QTW;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = TikTok.TikTokShareDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TikTokShareDemo.app/TikTokShareDemo";
-			};
-			name = Release;
-		};
-		2BA39EE2289A2F81004F94F4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = TikTok.TikTokShareDemoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TikTokShareDemo;
-			};
-			name = Debug;
-		};
-		2BA39EE3289A2F81004F94F4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = TikTok.TikTokShareDemoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TikTokShareDemo;
 			};
 			name = Release;
 		};
@@ -811,24 +591,6 @@
 			buildConfigurations = (
 				2BA39EDC289A2F81004F94F4 /* Debug */,
 				2BA39EDD289A2F81004F94F4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2BA39EDE289A2F81004F94F4 /* Build configuration list for PBXNativeTarget "TikTokShareDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2BA39EDF289A2F81004F94F4 /* Debug */,
-				2BA39EE0289A2F81004F94F4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2BA39EE1289A2F81004F94F4 /* Build configuration list for PBXNativeTarget "TikTokShareDemoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2BA39EE2289A2F81004F94F4 /* Debug */,
-				2BA39EE3289A2F81004F94F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

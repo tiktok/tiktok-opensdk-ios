@@ -23,6 +23,7 @@ extension TikTokShareRequest: TikTokURLQueryParamsConvertible {
             URLQueryItem(name: "bundle_id", value: TikTokInfo.sha512BundleId),
             URLQueryItem(name: "sdk_name", value: TikTokInfo.shareSDKName),
             URLQueryItem(name: "redirect_uri", value: self.redirectURI ?? ""),
+            URLQueryItem(name: "state", value: self.state ?? ""),
         ]
     }
     

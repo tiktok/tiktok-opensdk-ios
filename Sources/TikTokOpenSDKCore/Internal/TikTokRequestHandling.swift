@@ -10,7 +10,7 @@ import Foundation
 @objc(TTKSDKRequestHandling)
 public protocol TikTokRequestHandling {
     /// Service-specific method to construct an URL to TikTok app
-    static func buildOpenURL(from request: TikTokBaseRequest) -> URL?
+    func buildOpenURL(from request: TikTokBaseRequest) -> URL?
     
     /// Handle the request with callbacks when TikTok app is launched and the task is completed with a response
     func handleRequest(

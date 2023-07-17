@@ -15,8 +15,10 @@ class TikTokAuthServiceTest: XCTestCase {
     }
 
     func testBuildOpenURL_empty() {
-        let req = TikTokAuthRequest(scopes: [], redirectURI: "")
-        let url = TikTokAuthService.buildOpenURL(from: req)
+        let authReq = TikTokAuthRequest(scopes: [], redirectURI: "")
+        let authService = TikTokAuthService(urlOpener: MockURLOpener())
+        authReq.service = authService
+        let url = authService.buildOpenURL(from: authReq)
         XCTAssertNotNil(url)
         let comp = URLComponents(url: url!, resolvingAgainstBaseURL: false)
         XCTAssertEqual(comp?.host, "www.tiktok.com")
@@ -24,12 +26,14 @@ class TikTokAuthServiceTest: XCTestCase {
     }
     
     func testBuildOpenURL_success() {
-        let req = TikTokAuthRequest(scopes: [], redirectURI: "")
-        req.scopes.insert("p1")
-        req.scopes.insert("p2")
-        req.requestID = "test-request-id"
-        req.state = "test-state"
-        let url = TikTokAuthService.buildOpenURL(from: req)
+        let authReq = TikTokAuthRequest(scopes: [], redirectURI: "")
+        let authService = TikTokAuthService(urlOpener: MockURLOpener())
+        authReq.service = authService
+        authReq.scopes.insert("p1")
+        authReq.scopes.insert("p2")
+        authReq.requestID = "test-request-id"
+        authReq.state = "test-state"
+        let url = authService.buildOpenURL(from: authReq)
         XCTAssertNotNil(url)
         XCTAssertEqual(url!.host, "www.tiktok.com")
         XCTAssertEqual(url!.scheme, "https")
@@ -53,7 +57,8 @@ class TikTokAuthServiceTest: XCTestCase {
         let req = TikTokAuthRequest(scopes: ["p1","p2"], redirectURI: redirectURI)
         req.requestID = "test-request-id"
         req.state = "test-state"
-        let serv = TikTokAuthService()
+        let serv = TikTokAuthService(urlOpener: MockURLOpener())
+        req.service = serv
         let tiktokExpectation = XCTestExpectation(description: "Expect to open TikTok")
         
         let ret = serv.handleRequest(req, completion: { _ in
@@ -76,7 +81,8 @@ class TikTokAuthServiceTest: XCTestCase {
         let req = TikTokAuthRequest(scopes: ["p1","p2"], redirectURI: redirectURI)
         req.requestID = "test-request-id"
         req.state = "test-state"
-        let serv = TikTokAuthService()
+        let serv = TikTokAuthService(urlOpener: MockURLOpener())
+        req.service = serv
         let tiktokExpectation = XCTestExpectation(description: "Expect to open TikTok")
         
         let ret = serv.handleRequest(req, completion: { _ in
@@ -95,7 +101,7 @@ class TikTokAuthServiceTest: XCTestCase {
     
     func testHandleResponse_failWithEmptyClosure() {
         let url = URL(string: "https://www.test.com/test?from_platform=tiktokopensdk&code=test-auth-code&request_id=test-request-id&error_code=0&response_id=test-response-id&state=test-state")!
-        let serv = TikTokAuthService()
+        let serv = TikTokAuthService(urlOpener: MockURLOpener())
         XCTAssertFalse(serv.handleResponseURL(url: url))
     }
 }

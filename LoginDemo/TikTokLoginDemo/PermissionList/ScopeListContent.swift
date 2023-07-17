@@ -61,24 +61,6 @@ let ScopeListContent: [ScopeListSection] = [
             default: true
         ),
         ScopeListItem(
-            title: "user.info.profile",
-            subtitle: "Read access to profile_web_link, profile_deep_link, bio_description, is_verified.",
-            type: .switch,
-            isRequired: false,
-            setDefault: setDefaultScope,
-            propagateChange: propagateScope,
-            default: false
-        ),
-        ScopeListItem(
-            title: "user.info.stats",
-            subtitle: "Read access to a user's statistical data, such as likes count, follower count, following count, and video count.",
-            type: .switch,
-            isRequired: false,
-            setDefault: setDefaultScope,
-            propagateChange: propagateScope,
-            default: false
-        ),
-        ScopeListItem(
             title: "video.upload",
             subtitle: "Share videos as a draft to your TikTok account",
             type: .switch,

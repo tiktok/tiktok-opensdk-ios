@@ -13,7 +13,7 @@ import typealias CommonCrypto.CC_LONG
 
 @objc (TTKSDKInfo)
 public class TikTokInfo: NSObject {
-    public static private(set) var currentVersion = "2.0.0"
+    public static private(set) var currentVersion = "2.0.1"
     public static private(set) var universalLink = "https://www.tiktok.com"
     public static private(set) var universalLinkAuthPath = "/opensdk/oauth/"
     public static private(set) var universalLinkSharePath = "/opensdk/share/"

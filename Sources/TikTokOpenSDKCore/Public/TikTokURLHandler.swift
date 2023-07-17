@@ -8,7 +8,7 @@
 import Foundation
 
 @objc (TTKSDKURLHandler)
-public final class TikTokURLHandler: NSObject{
+public final class TikTokURLHandler: NSObject {
     // MARK: - Public
     /// Handle the url sent back from TikTok.
     /// Call this function in your appDelegate's `application(_:open:options:)` method

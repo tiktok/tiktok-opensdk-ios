@@ -11,7 +11,7 @@
 			<string>TikTok</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>awp9h9mdmo510fct</string>
+				<string>${TikTokClientKey}</string>
 			</array>
 		</dict>
 	</array>
@@ -22,10 +22,8 @@
 		<string>tiktokopensdk</string>
 	</array>
 	<key>TikTokClientKey</key>
-	<string>awp9h9mdmo510fct</string>
+	<string>${TikTokClientKey}</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
 </dict>
 </plist>

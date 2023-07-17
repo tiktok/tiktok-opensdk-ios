@@ -16,6 +16,8 @@ class TikTokURLHandlerTest: XCTestCase {
     
     func testHandleShareResponseURL_success() {
         let shareRequest = TikTokShareRequest(localIdentifiers: ["1"], mediaType: .video, redirectURI: "https://www.test.com/test")
+        let shareService = TikTokShareService(urlOpener: MockURLOpener())
+        shareRequest.service = shareService
         let clientKey = "some_client_key"
         shareRequest.customConfig = TikTokShareRequest.CustomConfiguration.init(clientKey: clientKey, callerUrlScheme: clientKey)
         let callbackExpectation = XCTestExpectation(description: "Expect callback")
@@ -30,6 +32,8 @@ class TikTokURLHandlerTest: XCTestCase {
     
     func testHandleShareResponseURL_invalidRedirectURI() {
         let shareRequest = TikTokShareRequest(localIdentifiers: ["1"], mediaType: .video, redirectURI: "https://www.test.com/test")
+        let shareService = TikTokShareService(urlOpener: MockURLOpener())
+        shareRequest.service = shareService
         let clientKey = "some_client_key"
         shareRequest.customConfig = TikTokShareRequest.CustomConfiguration.init(clientKey: clientKey, callerUrlScheme: clientKey)
         let callbackExpectation = XCTestExpectation(description: "Expect callback")
