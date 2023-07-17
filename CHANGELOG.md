@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.0.1
+## 2.1.0
 ---
 Support Swift Package Manager and Cocoapods. Updated demo app to be a SPM demo. Refactored and optimized code.
 

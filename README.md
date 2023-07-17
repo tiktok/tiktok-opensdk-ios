@@ -20,7 +20,7 @@ Add the library to your XCode project as a Swift Package:
 
 1. Click `File -> Add Packages...`
 2. Paste the repository URL: `https://github.com/tiktok/tiktok-opensdk-ios`
-3. Select `Dependency Rule` -> `Up to Next Major Version` and input the major version you want (i.e. `2.0.1`)
+3. Select `Dependency Rule` -> `Up to Next Major Version` and input the major version you want (i.e. `2.1.0`)
 4. Select `Add to Project` -> Your project
 5. Click `Copy Dependency` and select the libraries you need (`TikTokOpenAuthSDK`, `TikTokOpenSDKCore`, `TikTokOpenShareSDK`)
 
