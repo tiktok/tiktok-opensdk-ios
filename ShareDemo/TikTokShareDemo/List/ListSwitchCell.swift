@@ -63,7 +63,7 @@ class ListSwitchCell<T: ListItem>: ListBaseCell<T> {
             subtitleView.topAnchor.constraint(equalTo: titleView.bottomAnchor),
             subtitleView.leftAnchor.constraint(equalTo: container.leftAnchor),
             subtitleView.bottomAnchor.constraint(equalTo: container.bottomAnchor),
-            subtitleView.widthAnchor.constraint(lessThanOrEqualToConstant: 300)
+            subtitleView.rightAnchor.constraint(lessThanOrEqualTo: switchView.leftAnchor)
         ])
 
         // Switch View

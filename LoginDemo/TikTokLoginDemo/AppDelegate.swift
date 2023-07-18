@@ -18,11 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
         window = UIWindow()
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyBoard.instantiateViewController(withIdentifier: "MainViewController")
-        let navigationVC = UINavigationController(rootViewController: viewController)
+        let navigationVC = UINavigationController(rootViewController: ScopeEditViewController())
         navigationVC.setNavigationBarHidden(true, animated: false)
         window?.rootViewController = navigationVC
+        window?.makeKeyAndVisible()
         return true
     }
 

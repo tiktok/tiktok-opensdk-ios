@@ -53,7 +53,7 @@ let ScopeListContent: [ScopeListSection] = [
     ScopeListSection(headerTitle: "Permissions", hideImg: true, items: [
         ScopeListItem(
             title: "user.info.basic",
-            subtitle: "Read your profile info (avatar, display name). This scope is required.",
+            subtitle: "Read a user's profile info (open id, avatar, display name). This scope is required.",
             type: .switch,
             isRequired: true,
             setDefault: setDefaultScope,

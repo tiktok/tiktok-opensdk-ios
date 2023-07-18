@@ -2,7 +2,7 @@
 
 ## Introduction
 
-TikTok OpenSDK is a framework that enables your users to log into your app with their TikTok accounts and share images and videos to TikTok. This SDK is available for download through CocoaPods.
+TikTok OpenSDK is a framework that enables your users to log into your app with their TikTok accounts and share images and videos to TikTok. This SDK is available for download through Swift Package Manager and Cocoapods.
 
 ## Getting Started
 
@@ -10,9 +10,21 @@ Minimum iOS version is 11.0 and minimum XCode version is 9.0. See [iOS Quickstar
 
 ### Developer Portal Application
 
-Sign up for a developer account in our [Developer Portal](https://developers.tiktok.com/login/). Upon application approval, the Developer Portal will provide you with a `Client Key` and `Client Secret`. See how to register your app [here](https://developers.tiktok.com/doc/getting-started-create-an-app/).
+Sign up for a developer account in our [Developer Portal](https://developers.tiktok.com/login/). Upon application approval, the Developer Portal will provide you with a `Client Key` and `Client Secret`. See how to register your app [here](https://developers.tiktok.com/doc/getting-started-create-an-app/). Before proceeding, make sure to add the Login Kit and/or Share Kit to your app by navigating to the `Manage apps` page, and clicking `+ Add products` in your developer portal account.
 
 ### Install the SDK
+
+#### Swift Package Manager
+
+Add the library to your XCode project as a Swift Package:
+
+1. Click `File -> Add Packages...`
+2. Paste the repository URL: `https://github.com/tiktok/tiktok-opensdk-ios`
+3. Select `Dependency Rule` -> `Up to Next Major Version` and input the major version you want (i.e. `2.1.0`)
+4. Select `Add to Project` -> Your project
+5. Click `Copy Dependency` and select the libraries you need (`TikTokOpenAuthSDK`, `TikTokOpenSDKCore`, `TikTokOpenShareSDK`)
+
+#### Cocoapods
 
 1. Add the following to your Podfile
 ```ruby
@@ -60,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ app: UIApplication,open url: URL, 
                      options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-        if (TikTokURLHandler.handleOpenURL(url)) {
+        if TikTokURLHandler.handleOpenURL(url) {
             return true
         }
         return false
@@ -69,8 +81,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, 
                      continue userActivity: NSUserActivity, 
                      restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-        if (TikTokURLHandler.handleOpenURL(userActivity.webpageURL)) {
-            return true
+        if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
+            if TikTokURLHandler.handleOpenURL(userActivity.webpageURL) {
+                return true
+            }
         }
         return false
     }
@@ -85,7 +99,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, 
                openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        if (TikTokURLHandler.handleOpenURL(URLContexts.first?.url)) {
+        if TikTokURLHandler.handleOpenURL(URLContexts.first?.url) {
             return
         }
     }
@@ -95,7 +109,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 ## Login Kit Usage
 
-Login Kit functionality depends on the `TikTokOpenSDKCore` and `TikTokOpenAuthSDK` pods, so be sure to add these to your podfile. The following code snippet shows how to create an authorization request and handle the response. See [Login Kit for iOS](https://developers.tiktok.com/doc/login-kit-ios-quickstart/) for more details.
+Login Kit functionality depends on the `TikTokOpenSDKCore` and `TikTokOpenAuthSDK` libraries, so be sure to select these when adding the package or cocoapods. The following code snippet shows how to create an authorization request and handle the response. See [Login Kit for iOS](https://developers.tiktok.com/doc/login-kit-ios-quickstart/) for more details.
 ```swift
 import TikTokOpenAuthSDK
 
@@ -115,7 +129,7 @@ Your app is responsible for maintaining a strong reference to the request in ord
 
 ## Share Kit Usage
 
-Share Kit functionality depends on the `TikTokOpenSDKCore` and `TikTokOpenShareSDK` pods, so be sure to add these to your podfile. The following code snippet shows how to create a share request and handle the response. See [Share Kit for iOS](https://developers.tiktok.com/doc/share-kit-ios-quickstart-v2/) for more details.
+Share Kit functionality depends on the `TikTokOpenSDKCore` and `TikTokOpenShareSDK` libraries, so be sure to select these when adding the package or cocoapods. The following code snippet shows how to create a share request and handle the response. See [Share Kit for iOS](https://developers.tiktok.com/doc/share-kit-ios-quickstart-v2/) for more details.
 ```swift
 import TikTokOpenShareSDK
 
@@ -136,11 +150,12 @@ Your app is responsible for maintaining a strong reference to the request in ord
 
 ## Demos
 
-Minimum iOS version for these demo apps is iOS 11.0.
+Minimum iOS version for the demo apps is iOS 14.0 for ShareDemo and iOS 12.0 for LoginDemo.
 
-1. Find a demo app for Login Kit or Share Kit under `/LoginDemo` or `/ShareDemo` respectively, and download it.
-2. `cd` into the directory and give it a `pod install`.
-3. `open TikTokXXXDemo.xcworkspace` and run the project to view the kit in action.
+1. Open `LoginDemo/TikTokLoginDemo.xcodeproj` or `ShareDemo/TikTokShareDemo.xcodeproj`.
+2. In order to run the demos on a physical iOS device, you will need a working universal link, and a provisioning profile with the Associated Domains capability. Import your provisioning profile, update the bundle ID, and add your universal link domain to the Associated Domains section. If you are running the LoginDemo, make sure you have added your universal link to the Redirect URI portion of the Login Kit section in the developer portal.
+3. Open the `Info.plist` file as source code and replace the uses of `${TikTokClientKey}` with your own client key from the developer portal. 
+4. Run the project to view the kit in action.
 
 ## License
 

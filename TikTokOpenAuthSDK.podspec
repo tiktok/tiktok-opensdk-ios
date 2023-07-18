@@ -15,7 +15,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TikTokOpenAuthSDK'
-  s.version          = '2.0.0'
+  s.version          = '2.1.0'
   s.summary          = 'TikTok OpenSDK Authorization'
   s.description      = <<-DESC
     This is TikTok OpenSDK authorization.
@@ -39,14 +39,11 @@ Pod::Spec.new do |s|
   s.dependency 'TikTokOpenSDKCore', "#{s.version}"
 
   s.subspec "Auth" do |ss|
-      ss.source_files =  'TikTokOpenAuthSDK/Classes/Core/**/*.swift'
-      ss.resource_bundles = {
-        'TikTokOpenAuthSDK' => ['TikTokOpenAuthSDK/Assets/**']
-      }
+      ss.source_files =  'Sources/TikTokOpenAuthSDK/**/*.swift'
   end
 
   s.test_spec 'UnitTests' do |ts|
     ts.requires_app_host = true
-    ts.source_files = 'TikTokOpenAuthSDK/Classes/Tests/**/*.swift'
+    ts.source_files = 'Tests/TikTokOpenAuthSDKTests/**/*.swift'
   end
 end

@@ -15,23 +15,21 @@ class ScopeEditViewController: UIViewController {
     private var authRequest: TikTokAuthRequest?
 
     func setupUI() {
-        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
         let scopeListVC = scopeListViewController
+        scopeListVC.view.translatesAutoresizingMaskIntoConstraints = false
         add(childViewController: scopeListVC)
         let bottomBarVC = BottomBarViewController()
         add(childViewController: bottomBarVC)
 
         NSLayoutConstraint.activate([
-            scopeListVC.view.topAnchor.constraint(equalTo: view.topAnchor),
-            scopeListVC.view.leftAnchor.constraint(equalTo: view.leftAnchor),
-            scopeListVC.view.rightAnchor.constraint(equalTo: view.rightAnchor),
-            scopeListVC.view.bottomAnchor.constraint(equalTo: bottomBarVC.view.topAnchor)
-        ])
-
-        NSLayoutConstraint.activate([
-            bottomBarVC.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            bottomBarVC.view.leftAnchor.constraint(equalTo: view.leftAnchor),
-            bottomBarVC.view.rightAnchor.constraint(equalTo: view.rightAnchor)
+            scopeListVC.view.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
+            scopeListVC.view.leftAnchor.constraint(equalTo: view.layoutMarginsGuide.leftAnchor),
+            scopeListVC.view.rightAnchor.constraint(equalTo: view.layoutMarginsGuide.rightAnchor),
+            scopeListVC.view.bottomAnchor.constraint(equalTo: bottomBarVC.view.topAnchor),
+            bottomBarVC.view.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
+            bottomBarVC.view.leftAnchor.constraint(equalTo: view.layoutMarginsGuide.leftAnchor),
+            bottomBarVC.view.rightAnchor.constraint(equalTo: view.layoutMarginsGuide.rightAnchor)
         ])
 
         bottomBarVC.authBtn.addTarget(self, action: #selector(sendRequest), for: .touchUpInside)

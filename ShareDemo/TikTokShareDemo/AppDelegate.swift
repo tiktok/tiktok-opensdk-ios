@@ -18,8 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
         window = UIWindow()
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyBoard.instantiateViewController(withIdentifier: "MainViewController")
+        let viewController = AppInfoViewController()
         let navigationVC = UINavigationController(rootViewController: viewController)
         navigationVC.navigationBar.barStyle = .default
         navigationVC.navigationBar.backgroundColor = .backgroundColor
@@ -38,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         window?.rootViewController = navigationVC
+        window?.makeKeyAndVisible()
         return true
     }
 
