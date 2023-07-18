@@ -57,11 +57,7 @@ public final class TikTokAuthRequest: NSObject, TikTokBaseRequest {
     @discardableResult
     public func send(_ completion: ((TikTokBaseResponse) -> Void)? = nil) -> Bool {
         TikTokAPI.add(request: self)
-        if TikTokUtils.TikTokIsInstalled() && !self.isWebAuth {
-            return service.handleRequest(self, completion: completion)
-        }
-        // If TikTok is not installed, launch system web browser for user to complete authorization
-        return (service as? TikTokAuthService)?.handlerRequestViaWeb(self, completion: completion) ?? false
+        return service.handleRequest(self, completion: completion)
     }
     
     // MARK: - Private

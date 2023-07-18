@@ -41,8 +41,8 @@ class TikTokShareService: NSObject, TikTokRequestResponseHandling {
         return true
     }
     
-    func buildOpenURL(from req: TikTokBaseRequest) -> URL? {
-        guard let shareReq = req as? TikTokShareRequest else { return nil }
+    func buildOpenURL(from request: TikTokBaseRequest) -> URL? {
+        guard let shareReq = request as? TikTokShareRequest else { return nil }
         guard let baseURL = URL(string:"\(TikTokInfo.universalLink)\(TikTokInfo.universalLinkSharePath)") else { return nil }
         guard var urlComps = URLComponents(url: baseURL, resolvingAgainstBaseURL: false) else { return nil }
         urlComps.queryItems = shareReq.convertToQueryParams()

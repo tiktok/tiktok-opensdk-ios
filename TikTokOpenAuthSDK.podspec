@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
 
   s.homepage         = 'https://github.com/tiktok/tiktok-opensdk-ios'
   s.license          = { :file => 'LICENSE' }
-  s.author           = { 'TikTok OpenPlatform' => 'tiktok-openplatform@bytedance.com' }
+  s.author           = { 'TikTok OpenPlatform' => 'tiktok-openplatform@tiktok.com' }
   s.source           = { :git => 'https://github.com/tiktok/tiktok-opensdk-ios.git', :tag => "v#{s.version.to_s}" }
 
   s.ios.deployment_target = '11.0'

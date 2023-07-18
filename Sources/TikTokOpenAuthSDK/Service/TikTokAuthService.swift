@@ -13,6 +13,11 @@ import TikTokOpenSDKCore
 class TikTokAuthService: NSObject, TikTokRequestResponseHandling {
     private(set) var completion: ((TikTokBaseResponse) -> Void)?
     private(set) var redirectURI: String?
+    private let urlOpener: TikTokURLOpener
+
+    init(urlOpener: TikTokURLOpener = UIApplication.shared) {
+        self.urlOpener = urlOpener
+    }
     
     //MARK: - TikTokRequestHandling
     func handleRequest(
@@ -21,10 +26,10 @@ class TikTokAuthService: NSObject, TikTokRequestResponseHandling {
     ) -> Bool
     {
         guard let authReq = request as? TikTokAuthRequest else { return false }
-        guard let openURL = TikTokAuthService.buildOpenURL(from: authReq) else { return false }
         self.completion = completion
         self.redirectURI = authReq.redirectURI
-        UIApplication.shared.open(openURL, options: [:]) { [weak self] success in
+        guard let url = buildOpenURL(from: authReq) else { return false }
+        urlOpener.open(url, options: [:]) { [weak self] success in
             guard let self = self else { return }
             if !success, let cancelURL = self.constructCancelURL() {
                 self.handleResponseURL(url: cancelURL)
@@ -33,22 +38,21 @@ class TikTokAuthService: NSObject, TikTokRequestResponseHandling {
         return true
     }
     
-    static func buildOpenURL(from req: TikTokBaseRequest) -> URL?{
-        guard let authReq = req as? TikTokAuthRequest else {
-            return nil
-        }
-        let base = "\(TikTokInfo.universalLink)\(TikTokInfo.universalLinkAuthPath)"
-        guard var urlComps = URLComponents(string: base) else {
-            return nil
-        }
-        urlComps.queryItems = authReq.convertToQueryParams()
+    func buildOpenURL(from request: TikTokBaseRequest) -> URL? {
+        guard let authReq = request as? TikTokAuthRequest else { return nil }
+        guard let webBaseURL = URL(string: TikTokInfo.webAuthIndexURL) else { return nil }
+        guard let nativeBaseURL = URL(string: "\(TikTokInfo.universalLink)\(TikTokInfo.universalLinkAuthPath)") else { return nil }
+        let isWebAuth = authReq.isWebAuth || !urlOpener.isTikTokInstalled()
+        let baseURL = isWebAuth ? webBaseURL : nativeBaseURL
+        guard var urlComps = URLComponents(url: baseURL, resolvingAgainstBaseURL: false) else { return nil }
+        urlComps.queryItems = isWebAuth ? authReq.convertToWebQueryParams() : authReq.convertToQueryParams()
         return urlComps.url
     }
     
     //MARK: - TikTokResponseHandling
     @discardableResult
     func handleResponseURL(url: URL) -> Bool {
-        guard let res = try? TikTokAuthResponse(fromURL: url, redirectURI: self.redirectURI ?? "") else { return false }
+        guard let res = try? TikTokAuthResponse(fromURL: url, redirectURI: redirectURI ?? "") else { return false }
         return handleResponse(res)
     }
     
@@ -58,40 +62,16 @@ class TikTokAuthService: NSObject, TikTokRequestResponseHandling {
         closure(response)
         return true
     }
-
-    //MARK: - Internal
-    func handlerRequestViaWeb(
-        _ request: TikTokAuthRequest,
-        completion: ((TikTokBaseResponse) -> Void)?
-    ) -> Bool {
-        guard let url = Self.formWebAuthURL(fromRequest: request) else { return false }
-        self.completion = completion
-        self.redirectURI = request.redirectURI
-        UIApplication.shared.open(url, options: [:]) { [weak self] success in
-            guard let self = self else { return }
-            if !success, let cancelURL = self.constructCancelURL() {
-                self.handleResponseURL(url: cancelURL)
-            }
-        }
-        return true
-    }
-    
-    private static func formWebAuthURL(fromRequest authReq: TikTokAuthRequest) -> URL? {
-        guard let url = URL(string: TikTokInfo.webAuthIndexURL) else { return nil }
-        guard var comps = URLComponents(url: url, resolvingAgainstBaseURL: false) else { return nil }
-        comps.queryItems = authReq.convertToWebQueryParams()
-        return comps.url
-    }
     
     //MARK: - Construct cancel URL
     private func constructCancelURL() -> URL? {
-        guard let redirectURI = self.redirectURI else { return nil }
+        guard let redirectURI = redirectURI else { return nil }
         guard let url = URL(string: redirectURI) else { return nil }
         guard var urlComps = URLComponents(url: url, resolvingAgainstBaseURL: false) else { return nil }
         urlComps.queryItems = [
             URLQueryItem(name: "error_code", value: "-2"),
             URLQueryItem(name: "error", value: "access_denied"),
-            URLQueryItem(name: "error_string", value: NSLocalizedString("User cancelled authorization", bundle: .module, comment: "")),
+            URLQueryItem(name: "error_string", value: "User cancelled authorization"),
         ]
         return urlComps.url
     }
