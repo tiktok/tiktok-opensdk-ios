@@ -12,8 +12,10 @@ import CommonCrypto
 @objc (TTKSDKCodeVerifier)
 public final class PKCE: NSObject {
     
+    @objc
     public let codeVerifier: String = PKCE.generateCodeVerifier()
     
+    @objc
     public var codeChallenge: String {
         if let data = codeVerifier.data(using: String.Encoding.utf8) {
             var digest = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
@@ -26,6 +28,7 @@ public final class PKCE: NSObject {
         return ""
     }
     
+    @objc
     public static func generateCodeVerifier() -> String {
         let codeVerifierLength = 43
         let validCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._"
