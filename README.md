@@ -6,7 +6,7 @@ TikTok OpenSDK is a framework that enables your users to log into your app with 
 
 ## Getting Started
 
-Minimum iOS version is 11.0 and minimum XCode version is 9.0. See [iOS Quickstart](https://developers.tiktok.com/doc/mobile-sdk-ios-quickstart/) for more details.
+Minimum iOS version is 12.0 and minimum XCode version is 10.0. See [iOS Quickstart](https://developers.tiktok.com/doc/mobile-sdk-ios-quickstart/) for more details.
 
 ### Developer Portal Application
 
@@ -20,7 +20,7 @@ Add the library to your XCode project as a Swift Package:
 
 1. Click `File -> Add Packages...`
 2. Paste the repository URL: `https://github.com/tiktok/tiktok-opensdk-ios`
-3. Select `Dependency Rule` -> `Up to Next Major Version` and input the major version you want (i.e. `2.2.0`)
+3. Select `Dependency Rule` -> `Up to Next Major Version` and input the major version you want (i.e. `2.3.0`)
 4. Select `Add to Project` -> Your project
 5. Click `Copy Dependency` and select the libraries you need (`TikTokOpenAuthSDK`, `TikTokOpenSDKCore`, `TikTokOpenShareSDK`)
 

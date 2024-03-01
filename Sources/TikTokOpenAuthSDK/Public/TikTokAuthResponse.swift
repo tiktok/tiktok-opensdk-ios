@@ -16,6 +16,7 @@ public enum TikTokAuthResponseErrorCode: Int {
     case failed = -3
     case denied = -4
     case unsupported = -5
+    case webviewError = -8
     case missingParams = 10005
     case unknown = 100000
 }
@@ -58,9 +59,10 @@ public class TikTokAuthResponse: NSObject, TikTokBaseResponse {
     /// - Parameters:
     ///     - url: the complete url with query parameters that TikTok sends back to your app
     ///     - redirectURI: the redirect URI used to callback to your app. Used to verify url.
+    ///     - fromWeb: if the response is coming from TikTok or SFSafariViewController
     /// - Throws:a TikTokResponseError that can occur if the url is malformed or the redirectURI is invalid
     @objc
-    public init(fromURL url: URL, redirectURI: String) throws {
+    public init(fromURL url: URL, redirectURI: String, fromWeb: Bool) throws {
         guard let comps = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
             throw TikTokResponseError.failToParseURL
         }
@@ -69,8 +71,14 @@ public class TikTokAuthResponse: NSObject, TikTokBaseResponse {
         }) else {
             throw TikTokResponseError.failToParseURL
         }
-        guard url.absoluteString.hasPrefix(redirectURI) else {
-            throw TikTokResponseError.invalidRedirectURI
+        if fromWeb {
+            guard url.absoluteString.hasPrefix(TikTokInfo.webAuthRedirectURI) else {
+                throw TikTokResponseError.invalidRedirectURI
+            }
+        } else {
+            guard url.absoluteString.hasPrefix(redirectURI) else {
+                throw TikTokResponseError.invalidRedirectURI
+            }
         }
         
         requestID        = dict["request_id"]
@@ -90,5 +98,9 @@ public class TikTokAuthResponse: NSObject, TikTokBaseResponse {
             grantedPermissions = Set(_permissions.components(separatedBy: ","))
         }
     }
+    
+    @objc
+    public convenience init(fromURL url: URL, redirectURI: String) throws {
+        try self.init(fromURL: url, redirectURI: redirectURI, fromWeb: false)
+    }
 }
-

@@ -44,15 +44,28 @@ public enum TikTokShareResponseState: Int {
     /// User saved the shared content as a draft
     case saveAsDraft = 20015
     /// Posting shared contents failed
-    case publishFaild = 20016
+    case publishFailed = 20016
+    /// TikTok is not Installed on user's device
+    case tiktokIsNotInstalled = 20019
     /// Downloading media from iCloud failed
     case mediaInICloudError = 21001
     /// Internal params parsing error
     case paramsParsingError = 21002
     /// Media resources do not exist
     case getMediaError = 21003
+    /// Upgrade TikTok Version
+    case upgradeTikTokVersion = 22000
+    /// Logged in user different than other platform
+    case differentUserLoggedIn = 22001
+    /// User has no dm permissions
+    case noDMPermission = 22002
+    /// Share to DM failed
+    case shareToDMFailed = 22003
+    /// Share to DM parameter is missing
+    case dmParameterMissing = 22004
+    ///  dmSchema is invalid
+    case dmSchemaInvalid = 22005
 }
-
 
 @objc (TTKSDKShareResponseErrorCode)
 public enum TikTokShareResponseErrorCode: Int {

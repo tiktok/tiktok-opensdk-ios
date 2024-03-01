@@ -15,7 +15,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TikTokOpenSDKCore'
-  s.version          = '2.2.0'
+  s.version          = '2.3.0'
   s.summary          = 'TikTok OpenSDK Core'
   s.description      = <<-DESC
     This is TikTok OpenSDK core, shared models and interface.
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   s.author           = { 'TikTok OpenPlatform' => 'tiktok-openplatform@tiktok.com' }
   s.source           = { :git => 'https://github.com/tiktok/tiktok-opensdk-ios.git', :tag => "v#{s.version.to_s}" }
 
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '12.0'
   s.pod_target_xcconfig = {
       'GCC_PRECOMPILE_PREFIX_HEADER' => "NO",
       'DEBUG_INFORMATION_FORMAT' => "DWARF with dSYM",

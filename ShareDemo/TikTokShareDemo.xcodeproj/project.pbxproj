@@ -49,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B9784D82B68846C0013FA15 /* TikTokShareDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TikTokShareDemo.entitlements; sourceTree = "<group>"; };
 		2BA39EB1289A2F80004F94F4 /* TikTokShareDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTokShareDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA39EB4289A2F80004F94F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BA39EBD289A2F80004F94F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,8 +85,8 @@
 		2BA39F67289DF329004F94F4 /* MetaInfoListTextInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaInfoListTextInputCell.swift; sourceTree = "<group>"; };
 		2BA39F80289F0FBD004F94F4 /* MetaInfoListDisplayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaInfoListDisplayCell.swift; sourceTree = "<group>"; };
 		2BAAC55C290CAC5E00305815 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
+		2BACABBD291C67100004014E /* TikTokShareDemo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TikTokShareDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		2BACABBE291D890E0004014E /* TwoWayBinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoWayBinding.swift; sourceTree = "<group>"; };
-		2BB36B182A01A05F00E563F9 /* TikTokShareDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TikTokShareDemo.entitlements; sourceTree = "<group>"; };
 		2BB3F7F128DC3D3000D12CDF /* AppInfoListEditableDisplayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoListEditableDisplayCell.swift; sourceTree = "<group>"; };
 		2BB3F7F328DC3D4E00D12CDF /* ListEditableDisplayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEditableDisplayCell.swift; sourceTree = "<group>"; };
 		9F762E182A57201E0023F6B4 /* tiktok-opensdk-ios */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "tiktok-opensdk-ios"; path = ..; sourceTree = "<group>"; };
@@ -126,7 +127,8 @@
 		2BA39EB3289A2F80004F94F4 /* TikTokShareDemo */ = {
 			isa = PBXGroup;
 			children = (
-				2BB36B182A01A05F00E563F9 /* TikTokShareDemo.entitlements */,
+				2B9784D82B68846C0013FA15 /* TikTokShareDemo.entitlements */,
+				2BACABBD291C67100004014E /* TikTokShareDemo-Bridging-Header.h */,
 				2BA39F13289A3A2F004F94F4 /* MetaInfoPage */,
 				2BA39F11289A3A1A004F94F4 /* SelectPage */,
 				2BA39F10289A3A08004F94F4 /* AppInfoPage */,
@@ -509,11 +511,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TikTokShareDemo/TikTokShareDemo.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TikTokShareDemo/Info.plist;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Share demo app need access photo library";
@@ -530,7 +529,6 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiktok.open.sharekitdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "TikTokShareDemo/TikTokShareDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -546,10 +544,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TikTokShareDemo/TikTokShareDemo.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TikTokShareDemo/Info.plist;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Share demo app need access photo library";
@@ -566,7 +561,6 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiktok.open.sharekitdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "TikTokShareDemo/TikTokShareDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

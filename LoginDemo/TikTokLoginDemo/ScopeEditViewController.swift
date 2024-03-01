@@ -74,8 +74,8 @@ class ScopeEditViewController: UIViewController {
                          "grant_type": "authorization_code",
                          "code_verifier": authRequest.pkce.codeVerifier,
                          "redirect_uri": authRequest.redirectURI ?? "",
-                         // Use your app's client_secret from dev portal that matches the client_key of your app
-                         "client_secret": "28cd717c25d74a38c00dc87301523448"]
+                         /* Use your app's client_secret from dev portal that matches the client_key of your app  */
+                         "client_secret": "YOUR_CLIENT_SECRET"]
         let httpBody = urlParams.map { "\($0.key)=\($0.value)" }
                                 .joined(separator: "&")
                                 .data(using: .utf8)

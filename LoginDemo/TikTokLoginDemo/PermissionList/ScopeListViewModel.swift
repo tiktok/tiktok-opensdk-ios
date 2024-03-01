@@ -14,7 +14,8 @@ class ScopeListViewModel: ListViewModel {
     public var alwaysInWeb: Bool = false
 
     public func toAuthRequest() -> TikTokAuthRequest {
-        let req = TikTokAuthRequest(scopes: scopes, redirectURI: "https://open-api.tiktok.com/auth")
+        /* update with your application's redirect URI, must be submitted on your developer portal account */
+        let req = TikTokAuthRequest(scopes: scopes, redirectURI: "https://example.com/auth")
         req.isWebAuth = alwaysInWeb
         return req
     }

@@ -27,7 +27,8 @@ class MetaInfoListViewModel: ListViewModel {
     var mediaType: TikTokShareMediaType = .image
 
     func toRequest() -> TikTokShareRequest {
-        let ret = TikTokShareRequest(localIdentifiers: media ?? [], mediaType: mediaType, redirectURI: "https://open-api.tiktok.com/share")
+        /* update with your application's redirect URI */
+        let ret = TikTokShareRequest(localIdentifiers: media ?? [], mediaType: mediaType, redirectURI: "https://example.com/share")
         if let clientKey = customClientKey, let callerUrlScheme = callerUrlScheme {
             ret.customConfig = TikTokShareRequest.CustomConfiguration(clientKey: clientKey, callerUrlScheme: callerUrlScheme)
         }

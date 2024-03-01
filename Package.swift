@@ -12,7 +12,7 @@ let package = Package(
     name: "TikTokOpenSDK",
     defaultLocalization: "en",
     platforms: [
-        .iOS(.v11)
+        .iOS(.v12)
     ],
     products: [
         .library(

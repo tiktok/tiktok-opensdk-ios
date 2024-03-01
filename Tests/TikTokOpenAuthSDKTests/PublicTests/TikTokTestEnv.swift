@@ -10,6 +10,13 @@ import UIKit
 @testable import TikTokOpenSDKCore
 
 open class MockURLOpener: TikTokURLOpener {
+    
+    private(set) var tiktokInstalled: Bool
+    
+    init(tiktokInstalled: Bool = true) {
+        self.tiktokInstalled = tiktokInstalled
+    }
+    
     public func canOpenURL(_ url: URL) -> Bool {
         return true
     }
@@ -20,7 +27,12 @@ open class MockURLOpener: TikTokURLOpener {
     
     @objc
     public func isTikTokInstalled() -> Bool {
-        return true
+        return tiktokInstalled
+    }
+    
+    @objc
+    public var keyWindow: UIWindow? {
+        UIApplication.shared.keyWindow
     }
 }
 

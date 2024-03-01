@@ -43,6 +43,8 @@ extension TikTokAuthRequest: TikTokURLQueryParamsConvertible {
             URLQueryItem(name: "redirect_uri", value: self.redirectURI ?? ""),
             URLQueryItem(name: "code_challenge", value: self.pkce.codeChallenge),
             URLQueryItem(name: "sdk_name", value: TikTokInfo.authSDKName),
+            URLQueryItem(name: "sdk_version", value: TikTokInfo.currentVersion),
+            URLQueryItem(name: "from", value: "opensdk")
         ]
     }
     

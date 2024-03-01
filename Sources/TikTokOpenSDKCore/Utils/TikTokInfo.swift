@@ -13,19 +13,22 @@ import typealias CommonCrypto.CC_LONG
 
 @objc (TTKSDKInfo)
 public class TikTokInfo: NSObject {
-    public static private(set) var currentVersion = "2.2.0"
+    public static private(set) var currentVersion = "2.3.0"
     public static private(set) var universalLink = "https://www.tiktok.com"
     public static private(set) var universalLinkAuthPath = "/opensdk/oauth/"
     public static private(set) var universalLinkSharePath = "/opensdk/share/"
     public static private(set) var authSDKName = "tiktok_sdk_auth"
     public static private(set) var shareSDKName = "tiktok_sdk_share"
     public static private(set) var shareScheme = "tiktoksharesdk"
-    
     public static let schemes = ["snssdk1233", "snssdk1180"]
     public static let webAuthIndexURL = "https://www.tiktok.com/v2/auth/authorize/"
 
     public static var clientKey: String {
         return Bundle.main.infoDictionary?["TikTokClientKey"] as? String ?? ""
+    }
+    
+    public static var webAuthRedirectURI: String {
+        return "\(clientKey)://response.bridge.tiktok.com/oauth"
     }
 
     public static let device: String = {

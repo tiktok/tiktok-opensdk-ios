@@ -83,4 +83,28 @@ class TikTokShareServiceTest: XCTestCase {
         let result = XCTWaiter.wait(for: [tiktokExpectation], timeout: 1.0)
         XCTAssertEqual(result, .timedOut, "Expectation was fulfilled, but it shouldn't have been.")
     }
+    
+    func testHandleResponseURL_tiktokNotInstalled() {
+        let redirectURI = "https://www.test.com/test"
+        let shareRequest = TikTokShareRequest(localIdentifiers: [], mediaType: .video, redirectURI: redirectURI)
+        let shareService = TikTokShareService(urlOpener: MockURLOpener(tiktokInstalled: false))
+        shareRequest.service = shareService
+        let tiktokExpectation = XCTestExpectation(description: "Expect to open TikTok")
+        var response: TikTokShareResponse?
+        var isExecuted = false
+        XCTAssertFalse(shareService.handleRequest(shareRequest, completion: { res in
+            isExecuted = true
+            response = res as? TikTokShareResponse
+            tiktokExpectation.fulfill()
+        }))
+        XCTAssertNotNil(response)
+        guard let res = response else {
+            XCTFail()
+            return
+        }
+        XCTAssertEqual(res.shareState, TikTokShareResponseState.tiktokIsNotInstalled)
+        XCTAssertEqual(res.errorCode, TikTokShareResponseErrorCode.common)
+        XCTAssertTrue(isExecuted)
+    }
+    
 }

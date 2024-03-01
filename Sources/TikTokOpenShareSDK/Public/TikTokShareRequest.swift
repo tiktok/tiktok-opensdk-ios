@@ -74,10 +74,17 @@ public class TikTokShareRequest: NSObject, TikTokBaseRequest {
     @objc
     public var state: String? = nil
     
+    /// If hostViewController is nil, will use top view controller
+    @objc
+    public weak var hostViewController: UIViewController?
+    
     /// Custom configuration for client key and caller url scheme.
     /// No need to provide it for regular cases if client key is provided in info.plist with key `TikTokClientKey`
     @objc
     public var customConfig: CustomConfiguration? = nil
+    
+    @objc
+    public lazy var service: TikTokRequestResponseHandling = TikTokShareService()
     
     @objc
     public init(localIdentifiers: [String], mediaType: TikTokShareMediaType, redirectURI: String) {
@@ -86,19 +93,13 @@ public class TikTokShareRequest: NSObject, TikTokBaseRequest {
         self.mediaType = mediaType
     }
     
-    @objc
-    public lazy var service: TikTokRequestResponseHandling = TikTokShareService()
-    
     // MARK: - Public
     @objc
     @discardableResult
     public func send(_ completion: ((TikTokBaseResponse) -> Void)? = nil) -> Bool {
         guard isValid else { return false }
-        if service.handleRequest(self, completion: completion) {
-            TikTokAPI.add(request: self)
-            return true
-        }
-        return false
+        TikTokAPI.add(request: self)
+        return service.handleRequest(self, completion: completion)
     }
     
     // MARK: - Private

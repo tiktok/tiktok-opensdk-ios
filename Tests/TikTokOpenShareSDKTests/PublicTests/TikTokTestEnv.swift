@@ -11,6 +11,13 @@ import UIKit
 @testable import TikTokOpenShareSDK
 
 open class MockURLOpener: TikTokURLOpener {
+    
+    private(set) var tiktokInstalled: Bool
+    
+    init(tiktokInstalled: Bool = true) {
+        self.tiktokInstalled = tiktokInstalled
+    }
+    
     public func canOpenURL(_ url: URL) -> Bool {
         return true
     }
@@ -21,7 +28,12 @@ open class MockURLOpener: TikTokURLOpener {
     
     @objc
     public func isTikTokInstalled() -> Bool {
-        return true
+        return tiktokInstalled
+    }
+    
+    @objc
+    public var keyWindow: UIWindow? {
+        UIApplication.shared.keyWindow
     }
 }
 
@@ -31,6 +43,11 @@ open class MockBundle: NSObject {
     func infoDictionary() -> [String: Any]? {
         return ["TikTokClientKey": "aaaa"]
     }
+    
+    @objc
+    func bundleIdentifier() -> String {
+        return "org.cocoapods.AppHost-TikTokOpenShareSDK-Unit-Tests"
+    }
 }
 
 class TikTokTestEnv {
@@ -39,6 +56,7 @@ class TikTokTestEnv {
     static func setUpEnv() {
         if !initialized {
             initialized = true
+            ttsdk_swizzleBundleIdentifier()
             ttsdk_swizzleBundleInfoDictionary()
         }
     }
@@ -48,6 +66,13 @@ class TikTokTestEnv {
                                 #selector(getter: Bundle.infoDictionary),
                                 MockBundle.self,
                                 #selector(MockBundle.infoDictionary))
+    }
+    
+    private static func ttsdk_swizzleBundleIdentifier() {
+        enableTestMethodSwizzle(Bundle.self,
+                                #selector(getter: Bundle.bundleIdentifier),
+                                MockBundle.self,
+                                #selector(MockBundle.bundleIdentifier))
     }
     
     private static func enableTestMethodSwizzle(_ cls1: AnyClass?, _ selector1: Selector, _ cls2: AnyClass?, _ selector2: Selector) {

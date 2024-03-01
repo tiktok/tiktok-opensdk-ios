@@ -10,6 +10,7 @@ import XCTest
 @testable import TikTokOpenShareSDK
 
 class TikTokURLHandlerTest: XCTestCase {
+    
     override class func setUp() {
         TikTokTestEnv.setUpEnv()
     }
@@ -24,10 +25,10 @@ class TikTokURLHandlerTest: XCTestCase {
         shareRequest.send { response in
             callbackExpectation.fulfill()
         }
-        let url = URL(string: "https://www.test.com/test?state=&from_platform=tiktoksharesdk&request_id=test-request-id&error_code=-2&response_id=test-response-id&error_string=bytebase_cancel_share")!
+        let url = URL(string: "https://www.test.com/test?state=&from_platform=tiktoksharesdk&request_id=test-request-id&error_code=-2&response_id=test-response-id&error_string=cancel_share")!
         XCTAssertEqual(url.host, "www.test.com")
         XCTAssertTrue(TikTokURLHandler.handleOpenURL(url))
-        wait(for: [callbackExpectation], timeout: 1)
+        wait(for: [callbackExpectation], timeout: 1.0)
     }
     
     func testHandleShareResponseURL_invalidRedirectURI() {
@@ -40,7 +41,7 @@ class TikTokURLHandlerTest: XCTestCase {
         shareRequest.send { response in
             callbackExpectation.fulfill()
         }
-        let url = URL(string: "https://www.incorrecttest.com/test?state=&from_platform=tiktoksharesdk&request_id=test-request-id&error_code=-2&response_id=test-response-id&error_string=bytebase_cancel_share")!
+        let url = URL(string: "https://www.incorrecttest.com/test?state=&from_platform=tiktoksharesdk&request_id=test-request-id&error_code=-2&response_id=test-response-id&error_string=cancel_share")!
         XCTAssertEqual(url.host, "www.incorrecttest.com")
         XCTAssertFalse(TikTokURLHandler.handleOpenURL(url))
         let result = XCTWaiter.wait(for: [callbackExpectation], timeout: 1.0)

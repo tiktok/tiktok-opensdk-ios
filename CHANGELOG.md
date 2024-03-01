@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.3.0
+---
+Upgraded minimum iOS support version to 12.0
+### ShareKit
+#### Added
+* Launch app store if TikTok is not installed
+
+### LoginKit
+#### Added
+* Use ASWebAuthenticationSession for web authorization
+
 ## 2.2.0
 ---
 Add @objc tags to PKCE class.

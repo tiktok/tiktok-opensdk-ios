@@ -44,12 +44,11 @@
 		2B43E83228A1ED2B002BEFB3 /* ListSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListSwitchCell.swift; sourceTree = "<group>"; };
 		2B43E83328A1ED2B002BEFB3 /* ListTextInputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTextInputCell.swift; sourceTree = "<group>"; };
 		2B43E83428A1ED2B002BEFB3 /* ListBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListBase.swift; sourceTree = "<group>"; };
+		2B9784D72B687FF50013FA15 /* TikTokLoginDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TikTokLoginDemo.entitlements; sourceTree = "<group>"; };
 		2BA39E672899E77D004F94F4 /* ScopeListCellBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopeListCellBase.swift; sourceTree = "<group>"; };
 		2BA39E692899E7CC004F94F4 /* ScopeListContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopeListContent.swift; sourceTree = "<group>"; };
 		2BA39F43289C929F004F94F4 /* ScopeListHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScopeListHeader.swift; sourceTree = "<group>"; };
 		2BAAC55E290CBF5C00305815 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
-		2BB367622A01784C00E563F9 /* TikTokLoginDemoRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TikTokLoginDemoRelease.entitlements; sourceTree = "<group>"; };
-		2BB367632A0178AF00E563F9 /* TikTokLoginDemoDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TikTokLoginDemoDebug.entitlements; sourceTree = "<group>"; };
 		2BFF3E8E2865363400371B8F /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
 		2BFF3E902865466400371B8F /* ScopeSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopeSwitchCell.swift; sourceTree = "<group>"; };
 		2BFF3E9628662FE700371B8F /* ScopeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopeListViewController.swift; sourceTree = "<group>"; };
@@ -99,8 +98,7 @@
 		2B0958CB2864E4AD004E4FCC /* TikTokLoginDemo */ = {
 			isa = PBXGroup;
 			children = (
-				2BB367632A0178AF00E563F9 /* TikTokLoginDemoDebug.entitlements */,
-				2BB367622A01784C00E563F9 /* TikTokLoginDemoRelease.entitlements */,
+				2B9784D72B687FF50013FA15 /* TikTokLoginDemo.entitlements */,
 				2B43E82F28A1ED2B002BEFB3 /* List */,
 				2BFF3E9E2866676600371B8F /* PermissionList */,
 				2BFF3E95286546FB00371B8F /* Utils */,
@@ -421,12 +419,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = TikTokLoginDemo/TikTokLoginDemoDebug.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = TikTokLoginDemo/TikTokLoginDemo.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TikTokLoginDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -442,7 +437,6 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiktok.open.loginkitdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -454,11 +448,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = TikTokLoginDemo/TikTokLoginDemoRelease.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = TikTokLoginDemo/TikTokLoginDemo.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TikTokLoginDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -474,7 +465,6 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiktok.open.loginkitdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
