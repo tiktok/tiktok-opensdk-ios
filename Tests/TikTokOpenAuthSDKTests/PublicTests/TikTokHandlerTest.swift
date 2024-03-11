@@ -30,6 +30,8 @@ class TikTokURLHandlerTest: XCTestCase {
     
     func testHandleAuthResponseURL_invalidRedirectURI() {
         let authRequest = TikTokAuthRequest(scopes: ["p1","p2"], redirectURI: "https://www.test.com/test")
+        let serv = TikTokAuthService(urlOpener: MockURLOpener())
+        authRequest.service = serv
         let callbackExpectation = XCTestExpectation(description: "Expect callback")
         authRequest.send { response in
             callbackExpectation.fulfill()
