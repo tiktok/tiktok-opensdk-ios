@@ -38,6 +38,7 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
   s.subspec "Core" do |ss|
       ss.source_files =  'Sources/TikTokOpenSDKCore/**/*.swift'
+      ss.resources = ['Sources/TikTokOpenSDKCore/Resources/PrivacyInfo.xcprivacy']
   end
 
 end
