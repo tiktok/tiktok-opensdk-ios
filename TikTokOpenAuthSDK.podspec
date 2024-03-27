@@ -40,6 +40,7 @@ Pod::Spec.new do |s|
 
   s.subspec "Auth" do |ss|
       ss.source_files =  'Sources/TikTokOpenAuthSDK/**/*.swift'
+      ss.resources = ['Sources/TikTokOpenAuthSDK/Resources/PrivacyInfo.xcprivacy']
   end
 
   s.test_spec 'UnitTests' do |ts|

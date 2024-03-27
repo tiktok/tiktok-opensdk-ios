@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.4.0
+---
+Add Privacy Manifest file for ShareKit and LoginKit
+
 ## 2.3.0
 ---
 Upgraded minimum iOS support version to 12.0
