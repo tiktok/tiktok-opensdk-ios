@@ -41,6 +41,7 @@ Pod::Spec.new do |s|
 
   s.subspec "Share" do |ss|
       ss.source_files =  'Sources/TikTokOpenShareSDK/**/*.swift'
+      ss.resources = ['Sources/TikTokOpenShareSDK/Resources/PrivacyInfo.xcprivacy']
   end
 
   s.test_spec 'UnitTests' do |ts|
