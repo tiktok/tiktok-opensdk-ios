@@ -15,7 +15,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TikTokOpenSDKCore'
-  s.version          = '2.3.0'
+  s.version          = '2.4.0'
   s.summary          = 'TikTok OpenSDK Core'
   s.description      = <<-DESC
     This is TikTok OpenSDK core, shared models and interface.
