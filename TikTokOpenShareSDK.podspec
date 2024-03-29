@@ -15,7 +15,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TikTokOpenShareSDK'
-  s.version          = '2.3.0'
+  s.version          = '2.4.0'
   s.summary          = 'TikTok OpenSDK Share'
   s.description      = <<-DESC
     This is TikTok OpenSDK for video and image sharing.
