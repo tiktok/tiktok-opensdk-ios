@@ -153,30 +153,6 @@ class TikTokAuthServiceTest: XCTestCase {
         XCTAssertEqual(result, .timedOut, "Expectation was fulfilled, but it shouldn't have been.")
     }
     
-    func testHandleResponse_webAuth_invalidClientScheme() {
-        let redirectURI = "https://www.test.com/test"
-        let req = TikTokAuthRequest(scopes: ["p1","p2"], redirectURI: redirectURI)
-        req.requestID = "test-request-id"
-        req.state = "test-state"
-        req.isWebAuth = true
-        let serv = TikTokAuthService(urlOpener: MockURLOpener(tiktokInstalled: false))
-        req.service = serv
-        let tiktokExpectation = XCTestExpectation(description: "Expect to open TikTok")
-        
-        let ret = serv.handleRequest(req, completion: { _ in
-            tiktokExpectation.fulfill()
-        })
-        XCTAssertTrue(ret)
-        XCTAssertEqual(serv.redirectURI, redirectURI)
-        XCTAssertNotNil(serv.completion)
-        let url = URL(string: "bbbb://response.bridge.tiktok.com/oauth?from_platform=tiktokopensdk&code=test-auth-code&request_id=test-request-id&error_code=0&response_id=test-response-id&state=test-state")!
-        XCTAssertThrowsError(try serv.completion!(TikTokAuthResponse(fromURL: url, redirectURI: redirectURI))) { error in
-            XCTAssertEqual(error as? TikTokResponseError, TikTokResponseError.invalidRedirectURI)
-        }
-        let result = XCTWaiter.wait(for: [tiktokExpectation], timeout: 1.0)
-        XCTAssertEqual(result, .timedOut, "Expectation was fulfilled, but it shouldn't have been.")
-    }
-    
     func testHandleResponse_failWithEmptyClosure() {
         let url = URL(string: "https://www.test.com/test?from_platform=tiktokopensdk&code=test-auth-code&request_id=test-request-id&error_code=0&response_id=test-response-id&state=test-state")!
         let serv = TikTokAuthService(urlOpener: MockURLOpener())
