@@ -135,15 +135,17 @@ import TikTokOpenShareSDK
 
 let shareRequest = TikTokShareRequest(localIdentifiers: [...], mediaType: .video, redirectURI: "https://www.example.com/path")
 shareRequest.send { response in
-    if let shareResponse = response as? TikTokShareResponse {} else { return }
-    if shareResponse.errorCode == .noError {
-        print("Share succeeded!")
-    } else {
-        print("Share Failed! 
-               Error Code: \(shareResponse.errorCode.rawValue) 
-               Error Message: \(shareResponse.errorMessage ?? "") 
-               Share State: \(shareResponse.shareState)")
-    }
+    if let shareResponse = response as? TikTokShareResponse {
+        if shareResponse.errorCode == .noError {
+            print("Share succeeded!")
+        } else {
+            print("Share Failed!")
+            print("Error Code: \(shareResponse.errorCode.rawValue)")
+            print("Error Message: \(shareResponse.errorDescription ?? "")")
+            print("Share State: \(shareResponse.shareState)")
+        }
+    } else { return }
+
 }
 ```
 Your app is responsible for maintaining a strong reference to the request in order to receive the response callback. You can discard it when you are done with the response.
