@@ -135,7 +135,7 @@ import TikTokOpenShareSDK
 
 let shareRequest = TikTokShareRequest(localIdentifiers: [...], mediaType: .video, redirectURI: "https://www.example.com/path")
 shareRequest.send { response in
-    let shareResponse = response as? TikTokShareResponse {} else { return }
+    if let shareResponse = response as? TikTokShareResponse {} else { return }
     if shareResponse.errorCode == .noError {
         print("Share succeeded!")
     } else {
