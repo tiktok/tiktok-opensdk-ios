@@ -144,7 +144,9 @@ shareRequest.send { response in
             print("Error Message: \(shareResponse.errorDescription ?? "")")
             print("Share State: \(shareResponse.shareState)")
         }
-    } else { return }
+    } else {
+        // Handle error when response is not a TikTokShareResponse
+    }
 
 }
 ```
