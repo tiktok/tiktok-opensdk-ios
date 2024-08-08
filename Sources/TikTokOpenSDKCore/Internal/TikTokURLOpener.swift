@@ -17,6 +17,9 @@ public protocol TikTokURLOpener {
 
 @objc
 extension UIApplication : TikTokURLOpener {
+    public func open(_ url: URL, options: [OpenExternalURLOptionsKey : Any], completionHandler completion: ((Bool) -> Void)?) {
+        open(url, options: options, completionHandler: completion)
+    }
     
     @objc
     public func isTikTokInstalled() -> Bool {
