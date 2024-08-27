@@ -15,7 +15,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TikTokOpenAuthSDK'
-  s.version          = '2.4.0'
+  s.version          = '2.5.0'
   s.summary          = 'TikTok OpenSDK Authorization'
   s.description      = <<-DESC
     This is TikTok OpenSDK authorization.
@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
 
   s.subspec "Auth" do |ss|
       ss.source_files =  'Sources/TikTokOpenAuthSDK/**/*.swift'
-      ss.resources = ['Sources/TikTokOpenAuthSDK/Resources/PrivacyInfo.xcprivacy']
+      ss.resource_bundles = {'TikTokOpenAuthSDKPrivacyInfo' => 'Sources/TikTokOpenSDKCore/Resources/PrivacyInfo.xcprivacy' }
   end
 
   s.test_spec 'UnitTests' do |ts|

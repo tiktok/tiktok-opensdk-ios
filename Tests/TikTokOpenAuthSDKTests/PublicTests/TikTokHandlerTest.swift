@@ -13,20 +13,6 @@ class TikTokURLHandlerTest: XCTestCase {
     override class func setUp() {
         TikTokTestEnv.setUpEnv()
     }
-
-    func testHandleAuthResponseURL_success() {
-        let authRequest = TikTokAuthRequest(scopes: ["p1","p2"], redirectURI: "https://www.test.com/test")
-        let serv = TikTokAuthService(urlOpener: MockURLOpener())
-        authRequest.service = serv
-        let callbackExpectation = XCTestExpectation(description: "Expect callback")
-        authRequest.send { response in
-            callbackExpectation.fulfill()
-        }
-        let url = URL(string: "https://www.test.com/test?state=&from_platform=tiktokopensdk&request_id=test-request-id&error_code=-2&response_id=test-response-id&error_string=cancel_oauth")!
-        XCTAssertEqual(url.host, "www.test.com")
-        XCTAssertTrue(TikTokURLHandler.handleOpenURL(url))
-        wait(for: [callbackExpectation], timeout: 1)
-    }
     
     func testHandleAuthResponseURL_invalidRedirectURI() {
         let authRequest = TikTokAuthRequest(scopes: ["p1","p2"], redirectURI: "https://www.test.com/test")

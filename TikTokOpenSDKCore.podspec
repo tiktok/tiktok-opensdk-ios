@@ -15,7 +15,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TikTokOpenSDKCore'
-  s.version          = '2.4.0'
+  s.version          = '2.5.0'
   s.summary          = 'TikTok OpenSDK Core'
   s.description      = <<-DESC
     This is TikTok OpenSDK core, shared models and interface.
@@ -38,7 +38,7 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
   s.subspec "Core" do |ss|
       ss.source_files =  'Sources/TikTokOpenSDKCore/**/*.swift'
-      ss.resources = ['Sources/TikTokOpenSDKCore/Resources/PrivacyInfo.xcprivacy']
+      ss.resource_bundles = {'TikTokOpenSDKCorePrivacyInfo' => 'Sources/TikTokOpenSDKCore/Resources/PrivacyInfo.xcprivacy' }
   end
 
 end

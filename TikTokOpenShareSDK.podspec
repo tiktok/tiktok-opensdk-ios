@@ -15,7 +15,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TikTokOpenShareSDK'
-  s.version          = '2.4.0'
+  s.version          = '2.5.0'
   s.summary          = 'TikTok OpenSDK Share'
   s.description      = <<-DESC
     This is TikTok OpenSDK for video and image sharing.
@@ -41,7 +41,7 @@ Pod::Spec.new do |s|
 
   s.subspec "Share" do |ss|
       ss.source_files =  'Sources/TikTokOpenShareSDK/**/*.swift'
-      ss.resources = ['Sources/TikTokOpenShareSDK/Resources/PrivacyInfo.xcprivacy']
+      ss.resource_bundles = {'TikTokOpenShareSDKPrivacyInfo' => 'Sources/TikTokOpenSDKCore/Resources/PrivacyInfo.xcprivacy' }
   end
 
   s.test_spec 'UnitTests' do |ts|

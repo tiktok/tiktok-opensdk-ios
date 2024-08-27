@@ -36,7 +36,7 @@ class TikTokAuthService: NSObject, TikTokRequestResponseHandling {
             return handleRequestViaWeb(request)
         } else {
             guard let url = buildOpenURL(from: authReq) else { return false }
-            urlOpener.open(url, options: [:]) { [weak self] success in
+            (urlOpener as? UIApplication)?.open(url, options: [:]) { [weak self] success in
                 guard let self = self else { return }
                 if !success, let cancelURL = self.constructCancelURL(baseURL: authReq.redirectURI ?? "") {
                     self.handleResponseURL(url: cancelURL)

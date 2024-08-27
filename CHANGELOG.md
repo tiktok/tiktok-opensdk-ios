@@ -1,4 +1,8 @@
 # Changelog
+## 2.5.0(os_internal)
+---
+Add support for Xcode 16 beta 3
+Update unit tests
 
 ## 2.4.0
 ---
