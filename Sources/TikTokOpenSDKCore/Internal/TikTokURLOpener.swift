@@ -10,14 +10,12 @@ import UIKit
 
 public protocol TikTokURLOpener {
     func canOpenURL(_ url: URL) -> Bool
-    func open(_ url: URL, options: [UIApplication.OpenExternalURLOptionsKey : Any], completionHandler completion: ((Bool) -> Void)?)
     var keyWindow: UIWindow? { get }
     func isTikTokInstalled() -> Bool
 }
 
 @objc
 extension UIApplication : TikTokURLOpener {
-    
     @objc
     public func isTikTokInstalled() -> Bool {
         for scheme in TikTokInfo.schemes {

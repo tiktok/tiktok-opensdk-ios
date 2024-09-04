@@ -31,7 +31,7 @@ class TikTokShareService: NSObject, TikTokRequestResponseHandling, SFSafariViewC
         self.request = shareRequest
         if urlOpener.isTikTokInstalled() {
             guard let url = buildOpenURL(from: request) else { return false }
-            urlOpener.open(url, options: [:]) { success in
+            (urlOpener as? UIApplication)?.open(url, options: [:]) { success in
                 if !success, let cancelURL = self.constructErrorURL(errorCode: String(TikTokShareResponseErrorCode.cancelled.rawValue),
                                                                shareState: String(TikTokShareResponseState.cancelled.rawValue),
                                                                errorDescription: USER_CANCELED_SHARE) {
