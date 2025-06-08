@@ -51,8 +51,7 @@ class TikTokAuthService: NSObject, TikTokRequestResponseHandling {
     ) -> Bool {
         guard let authReq = request as? TikTokAuthRequest else { return false }
         guard let url = buildOpenURL(from: authReq) else { return false }
-        let authSession = ASWebAuthenticationSession(url: url, callbackURLScheme: TikTokInfo.clientKey) { [weak self] (callbackURL, error) in
-            guard let self = self else { return }
+        let authSession = ASWebAuthenticationSession(url: url, callbackURLScheme: TikTokInfo.clientKey) { (callbackURL, error) in
             self.handleWebAuthCallback(callbackURL: callbackURL, error: error as NSError?)
             self.authSession = nil
         }
