@@ -115,13 +115,15 @@ import TikTokOpenAuthSDK
 
 let authRequest = TikTokAuthRequest(scopes: ["user.info.basic"], redirectURI: "https://www.example.com/path")
 authRequest.send { response in
-    let authResponse = response as? TikTokAuthResponse else { return }
+    guard let authResponse = response as? TikTokAuthResponse else { return }
     if authResponse.errorCode == .noError {
-        print("Auth code: \(authResponse.code)")
+        print("Auth code: \(authResponse.authCode)")
     } else {
-       print("Authorization Failed! 
-             Error: \(authResponse.error ?? "") 
-             Error Description: \(authResponse.errorDescription ?? ""))
+      print("""
+            Authorization Failed!
+            Error: \(authResponse.error ?? "")
+            Error Description: \(authResponse.errorDescription ?? "")
+            """)
     }
 }
 ```
